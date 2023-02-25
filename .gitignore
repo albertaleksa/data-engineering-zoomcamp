@@ -2,6 +2,10 @@
 /venv/
 /.idea/
 
+/week_1_basics_n_setup/terraform_gcp/.terraform/
+/week_1_basics_n_setup/terraform_gcp/.terraform*
+/week_1_basics_n_setup/terraform_gcp/terraform*
+
 # postgres db
 /week_1_basics_n_setup/docker_sql/ny_taxi_postgres_data/
 

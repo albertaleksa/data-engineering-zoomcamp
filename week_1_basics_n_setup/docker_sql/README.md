@@ -82,6 +82,10 @@ docker run -it \
 
 ## Docker-compose
 
+Docker Compose allows putting configuration of multiple containers in to one file.
+Instead of  writing all that messy commands we will just create everything in one fell sweep with Docker Compose.
+Docker Compose is a convenient way to run multiple related services with just one config file.
+
 ```
 services:
   pgdatabase:
@@ -107,8 +111,27 @@ volumes:
   pgadmin_conn_data:
 ```
 
-  
-  
-  
+Run docker-compose:
+`docker-compose up -d`
 
+Stop docker-compose:
+`docker-compose down`
+  
+  
+### Run python script in **docker** container (default network)
+Run docker container `taxi_ingest:v001` with default network (when postgres and pgadmin run by **docker-compose**):
+```
+# run docker container taxi_ingest:v001
+# with default network
+docker run -it \
+  --network=docker_sql_default \
+  taxi_ingest:v001 \
+  --user=root \
+  --password=root \
+  --host=pgdatabase \
+  --port=5432 \
+  --db=ny_taxi \
+  --table_name=yellow_taxi_trips \
+  --url=${URL}
+```
 

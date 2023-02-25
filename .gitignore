@@ -4,3 +4,7 @@
 
 # postgres db
 /week_1_basics_n_setup/docker_sql/ny_taxi_postgres_data/
+
+/week_1_basics_n_setup/docker_sql/*.csv
+/week_1_basics_n_setup/docker_sql/upload-data.ipynb
+/week_1_basics_n_setup/docker_sql/tst

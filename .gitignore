@@ -1,2 +1,6 @@
 # Project exclude paths
 /venv/
+/.idea/
+
+# postgres db
+/week_1_basics_n_setup/docker_sql/ny_taxi_postgres_data/

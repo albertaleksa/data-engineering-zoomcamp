@@ -2,11 +2,11 @@
 /venv/
 /.idea/
 
-/week_1_basics_n_setup/terraform_gcp/.terraform/
-/week_1_basics_n_setup/terraform_gcp/.terraform*
-/week_1_basics_n_setup/terraform_gcp/terraform*
+/week_1_basics_n_setup/terraform_gcp/terraform/.terraform/
+/week_1_basics_n_setup/terraform_gcp/terraform/.terraform*
+/week_1_basics_n_setup/terraform_gcp/terraform/terraform*
 
-!/week_1_basics_n_setup/terraform_gcp/.terraform-version
+!/week_1_basics_n_setup/terraform_gcp/terraform/.terraform-version
 !/week_1_basics_n_setup/terraform_gcp/terraform_overview.md
 
 # postgres db

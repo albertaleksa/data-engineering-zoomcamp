@@ -44,6 +44,12 @@ docker run -it \
   dpage/pgadmin4
 ```
 
+### PgAdmin GUI Tool
+
+Open Web based GUI:
+
+`localhost:8080`
+
 ## Run Python script
 
 Path to data: `URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"`
@@ -115,8 +121,7 @@ Run docker-compose:
 `docker-compose up -d`
 
 Stop docker-compose:
-`docker-compose down`
-  
+`docker-compose down`  
   
 ### Run python script in **docker** container (default network)
 Run docker container `taxi_ingest:v001` with default network (when postgres and pgadmin run by **docker-compose**):

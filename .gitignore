@@ -4,8 +4,10 @@
 
 /week_1_basics_n_setup/terraform_gcp/.terraform/
 /week_1_basics_n_setup/terraform_gcp/.terraform*
-!/week_1_basics_n_setup/terraform_gcp/.terraform-version
 /week_1_basics_n_setup/terraform_gcp/terraform*
+
+!/week_1_basics_n_setup/terraform_gcp/.terraform-version
+!/week_1_basics_n_setup/terraform_gcp/terraform_overview.md
 
 # postgres db
 /week_1_basics_n_setup/docker_sql/ny_taxi_postgres_data/

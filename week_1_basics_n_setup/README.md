@@ -58,12 +58,10 @@ if you have troubles setting up the environment and following along with the vid
   * [Video](https://www.youtube.com/watch?v=18jIzE41fJ4&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 * Introduction to Terraform Concepts & GCP Pre-Requisites
   * [Video](https://www.youtube.com/watch?v=Hajwnmj0xfQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
-  * [Companion Notes](1_terraform_gcp)
+  * [Companion Notes](terraform_gcp)
 * Workshop: Creating GCP Infrastructure with Terraform
   * [Video](https://www.youtube.com/watch?v=dNkEgO-CExg&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
-  * [Workshop](1_terraform_gcp/terraform)
-* Configuring terraform and GCP SDK on Windows
-  * [Instructions](1_terraform_gcp/windows.md)
+  * [Workshop](terraform_gcp/terraform)
 
 
 ### Environment setup 

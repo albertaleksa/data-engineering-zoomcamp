@@ -139,6 +139,7 @@
 
     If it doesn't work, then: 
     ```
+    $ pip uninstall pgcli
     $ conda install -c conda-forge pgcli
     $ pip install -U mycli
     ```
@@ -157,9 +158,87 @@
 `http://localhost:8080`
 
 ### 14. Run Jupyter:
+- Run: `$ jupyter notebook`
+- Forward port **8888** for Jupyter
+- Copy url from terminal and run into browser to access the notebook
+- Download data to check:
+    ```
+    $ wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
+    $ gunzip yellow_tripdata_2021-01.csv.gz 
+    ```
+- In jupyter open **upload-data.ipynb** and run commands
+    ```
+    import pandas as pd
+    
+    pd.__version__
 
+    df = pd.read_csv('yellow_tripdata_2021-01.csv', nrows=100)
 
+    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+    df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+    
+    from sqlalchemy import create_engine
+    
+    engine = create_engine('postgresql://root:root@localhost:5432/ny_taxi')
+    
+    engine.connect()
+    
+    df.head(n=0).to_sql(name='yellow_taxi_data', con=engine, if_exists='replace')
+    
+    df.to_sql(name='yellow_taxi_data', con=engine, if_exists='append')
+    ```
+- Then check that 100 rows appeared in the database
 
-   
+### 14. Install Terraform:
+- Download Terraform into `/bin` folder:
+  ```
+  $ wget https://releases.hashicorp.com/terraform/1.3.9/terraform_1.3.9_linux_amd64.zip
+  ```
+- Install unzip and unzip archive:
+  ```
+  $ sudo apt-get install unzip
+  $ unzip terraform_1.3.9_linux_amd64.zip
+  $ rm terraform_1.3.9_linux_amd64.zip
+  ```
 
+### 15. SFTP GCP credentials to VM (*.json file with key):
+- Connect by sftp to de-zoomcamp and copy *.json file:
+  ```
+  $ sftp de-zoomcamp
+  sftp> mkdir .gc
+  sftp> cd .gc
+  sftp> put <service-account-authkeys>.json
+  ```
 
+### 16. Configure gcloud:
+- Setup **GOOGLE_APPLICATION_CREDENTIALS**:
+   ```
+   $ export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+   ```
+- Authenticate cli:
+   ```
+   $ gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
+   ```
+
+### 17. Run Terraform commands (in terraform folder):
+- Init
+   ```
+   $ terraform init
+   ```
+- Plan and input Project ID:
+   ```
+   $ terraform plan
+   ``` 
+- Apply:
+   ```
+   $ terraform apply
+   ```
+
+### 18. Shutdown VM:
+   ```
+   $ sudo shutdown now
+   ```
+
+### 19. Start VM:
+- In GCP Console **Start/Resume** VM instance
+- Edit ~/.ssh/config and replace HostName to new external ip of VM instance

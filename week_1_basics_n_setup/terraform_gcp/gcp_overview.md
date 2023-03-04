@@ -14,19 +14,27 @@
 For this course, we'll use a free version (upto EUR 300 credits). 
 
 1. Create an account with your Google email ID 
-2. Setup your first [project](https://console.cloud.google.com/) if you haven't already
-    * eg. "DTC DE Course", and note down the "Project ID" (we'll use this later when deploying infra with TF)
-3. Setup [service account & authentication](https://cloud.google.com/docs/authentication/getting-started) for this project
-    * Grant `Viewer` role to begin with.
-    * Download service-account-keys (.json) for auth.
-4. Download [SDK](https://cloud.google.com/sdk/docs/quickstart) for local setup
+2. Create your first [project](https://console.cloud.google.com/) if you haven't already
+    * New project -> Project name: **dtc-de**
+    * and note down the **Project ID** (we'll use this later when deploying infra with TF)
+3. Create [service account & authentication](https://cloud.google.com/docs/authentication/getting-started) for this project:
+   * IAM & Admin -> Service accounts -> Create Service Account
+   * Name: **dtc-de-user**
+   * Grant `Viewer` role to begin with
+   * Create New Key for this account (json)
+   * Download service-account-keys (.json) for auth
+4. Download [SDK](https://cloud.google.com/sdk/docs/quickstart) and install for local setup
 5. Set environment variable to point to your downloaded GCP keys:
-   ```shell
-   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
-   
-   # Refresh token/session, and verify authentication
-   gcloud auth application-default login
+   * Create dir /.gc for gcloud service-account-keys in home folder and copy *.json key there (for convenient). 
+   * Set var **GOOGLE_APPLICATION_CREDENTIALS**:
    ```
+   $ export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+   ```
+   * Refresh token/session, and verify authentication (OAth authentication):
+   ```
+   $ gcloud auth application-default login
+   ```
+   * On web browser allow access
    
 ### Setup for Access
  
@@ -40,7 +48,7 @@ For this course, we'll use a free version (upto EUR 300 credits).
    * https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com
    
 3. Please ensure `GOOGLE_APPLICATION_CREDENTIALS` env-var is set.
-   ```shell
+   ```
    export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
    ```
  

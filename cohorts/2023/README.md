@@ -9,8 +9,8 @@
 
 [**Week 1: Introduction & Prerequisites**](week_1_docker_sql/)
 
-* [Homework SQL](week_1_docker_sql/homework.md) and [solution](https://www.youtube.com/watch?v=KIh_9tZiroA)
-* [Homework Terraform](week_1_terraform/homework.md)
+* [Homework Docker SQL](week_1_docker_sql/homework.md) and [My Solution](week_1_docker_sql/homework_my_solutions.md) and [video solution](https://www.youtube.com/watch?v=KIh_9tZiroA)
+* [Homework Terraform](week_1_terraform/homework.md) and [My Solution](week_1_terraform/homework_my_solutions.md)
 * [Office hours](https://www.youtube.com/watch?v=RVTryVvSyw4&list=PL3MmuxUbc_hJjEePXIdE-LVUx_1ZZjYGW)
 
 [**Week 2: Workflow Orchestration**](week_2_workflow_orchestration)

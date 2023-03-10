@@ -1,5 +1,7 @@
 # Project exclude paths
 /venv/
+/week_2_workflow_orchestration/zooomcamp/
+
 /.idea/
 
 /week_1_basics_n_setup/terraform_gcp/terraform/.terraform/

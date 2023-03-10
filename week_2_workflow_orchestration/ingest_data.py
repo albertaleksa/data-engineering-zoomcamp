@@ -6,8 +6,9 @@ import argparse
 import os
 from time import time
 from sqlalchemy import create_engine
+from prefect import flow, task
 
-
+@task(log_prints=True, retries=3)
 def ingest_data(user, password, host, port, db, table_name, url):
 
     if url.endswith('.csv.gz'):
@@ -32,19 +33,19 @@ def ingest_data(user, password, host, port, db, table_name, url):
 
     df.to_sql(name=table_name, con=engine, if_exists='append')
 
-    for chunk in df_iter:
-        t_start = time()
-        chunk.tpep_pickup_datetime = pd.to_datetime(chunk.tpep_pickup_datetime)
-        chunk.tpep_dropoff_datetime = pd.to_datetime(chunk.tpep_dropoff_datetime)
-        chunk.to_sql(name=table_name, con=engine, if_exists='append')
-        t_end = time()
-        print("inserted another chunk, took %.3f second" % (t_end - t_start))
+    # for chunk in df_iter:
+    #     t_start = time()
+    #     chunk.tpep_pickup_datetime = pd.to_datetime(chunk.tpep_pickup_datetime)
+    #     chunk.tpep_dropoff_datetime = pd.to_datetime(chunk.tpep_dropoff_datetime)
+    #     chunk.to_sql(name=table_name, con=engine, if_exists='append')
+    #     t_end = time()
+    #     print("inserted another chunk, took %.3f second" % (t_end - t_start))
 
-
-if __name__ == '__main__':
+@flow(name="Ingest Flow")
+def main_flow():
     user = "root"
     password = "root"
-    host = "pgdatabase"
+    host = "localhost"
     port = "5432"
     db = "ny_taxi"
     table_name = "yellow_taxi_trip"
@@ -53,5 +54,6 @@ if __name__ == '__main__':
     ingest_data(user, password, host, port, db, table_name, csv_url)
 
 
-
+if __name__ == '__main__':
+    main_flow()
 

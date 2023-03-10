@@ -63,8 +63,49 @@ python ingest_data.py
 - Run script `python ingest_data.py`. Created flow and task. 
 
 ### Prefect Task: Extract Data
+- Add task(function) for extraction data and move from function `ingest_data`
+code for downloading file and creating Dataframe:
+  ```
+  @task(log_prints=True, retries=3, cache_key_fn=task_input_hash, cache_expiration=timedelta(days=1))
+  def extract_data(url):
+  ```
+- Add in `def main_flow()`:
+  ```
+  raw_data = extract_data(csv_url)
+  ```
+- Add to import:
+  ```
+  from prefect.tasks import task_input_hash
+  from datetime import timedelta
+  ```
+- `cache_key_fn=task_input_hash` for cashing and making task execution go faster and more efficiently
 
+### Prefect Task: Transform / Data Cleanup
+Cleanup data: remove rows with field passenger_count equal to 0
+- Create task for transform data:
+  ```
+  @task(log_prints=True)
+  def transform_data(df):
+      print(f"pre: missing passenger count: {df['passenger_count'].isin([0]).sum()}")
+      df = df[df['passenger_count'] != 0]
+      print(f"post: missing passenger count: {df['passenger_count'].isin([0]).sum()}")
+  
+      return df
+  ```
+- Add to `main_flow`:
+  ```
+  data = transform_data(raw_data)
+  ```
 
+### Prefect Task: Load Data into Postgres
+- Use function `ingest_data` for load data into the Postgres db
+- Add connection to the db
+- In function `main_flow()` modify:
+  ```
+  ingest_data(user, password, host, port, db, table_name, data)
+  ```
+
+### Prefect Flow: Parameterization & Subflows
 
 
 

@@ -38,7 +38,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=cdtN6dhp708&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### 3. ETL with GCP & Prefect
+### 3. [ETL with GCP & Prefect](etl_gcp_prefect.md)
 
 * Flow 1: Putting data to Google Cloud Storage 
 

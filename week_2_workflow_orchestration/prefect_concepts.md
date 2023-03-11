@@ -10,19 +10,19 @@
 ### Installing Prefect
 - Create a virtualenv and install dependencies using `venv`
   ```
-  python3 -m venv zooomcamp
+  $ python3 -m venv zooomcamp
   # activate env
-  source zooomcamp/bin/activate
+  $ source zooomcamp/bin/activate
   ```
   or using `conda`:
   ```
-  conda create -n zooomcamp python=<python version>
+  $ conda create -n zooomcamp python=<python version>
   # activate env
-  conda activate zooomcamp
+  $ conda activate zooomcamp
   ```
 - Install requirements from requirements.txt:
   ```
-  pip install -r requirements.txt
+  $ pip install -r requirements.txt
   ```
 
   ```
@@ -40,7 +40,7 @@
 ### Ingest data
 Run python script:
 ```
-python ingest_data.py
+$ python ingest_data.py
 ```
 
 ### Transform the Script (ingest_data.py) into a Prefect Flow
@@ -106,13 +106,58 @@ Cleanup data: remove rows with field passenger_count equal to 0
   ```
 
 ### Prefect Flow: Parameterization & Subflows
+- Because a flow is just a function we can add **params**:
+  ```
+  @flow(name="Ingest Flow")
+  def main_flow(table_name: str):
+  ```
+- Can add a **Subflow** to Flow:
+  ```
+  # just print a table_name
+  @flow(name="Subflow", log_prints=True)
+  def log_subflow(table_name: str):
+      print(f"Logging Subflow for: {table_name}")
+  
+  # in main_flow():
+  log_subflow(table_name)
+  
+  ```
+
+### Prefect Orion: Quick Tour through the UI
+Run UI:
+```
+$ prefect orion start
+```
+
+### Prefect Blocks
+Enable to storage configuration and provide with an interface of interacting with external systems (ex.AWS Credentials, BigQuery Warehouse or can create your own)
 
 
+### Prefect Blocks: Add SQLAlchemy
+- In Prefect UI:
+  > Blocks -> Add Block -> SQLAlchemy Connector
+  
+  > Block Name: postgres-connector
+  >
+  > Driver -> SyncDriver: postgresql+pycopg2 
+  >
+  > Database: ny_taxi
+  >
+  > and other data to connect to the db 
 
-* Installing Prefect
-* Prefect flow
-* Creating an ETL
-* Prefect task
-* Blocks and collections
-* Orion UI
-
+- In `ingest_data.py` add:
+  ```
+  from prefect_sqlalchemy import SqlAlchemyConnector
+  ```
+  Modify `def ingest_data`:
+  ```
+  @task(log_prints=True, retries=3)
+  def ingest_data(table_name, df):
+      # connect to Postgres
+      connection_block = SqlAlchemyConnector.load("postgres-connector")
+      with connection_block.get_connection(begin=False) as engine:
+          # create table
+          df.head(n=0).to_sql(name=table_name, con=engine, if_exists='replace')
+          df.to_sql(name=table_name, con=engine, if_exists='append')
+  ```
+  We can delete all credentials for connection to the db from python code.

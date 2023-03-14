@@ -13,6 +13,7 @@ def fetch(dataset_url: str) -> pd.DataFrame:
     #     raise Exception
 
     df = pd.read_csv(dataset_url)
+
     return df
 
 
@@ -24,6 +25,7 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     print(df.head(2))
     print(f"columns: {df.dtypes}")
     print(f"rows: {len(df)}")
+
     return df
 
 
@@ -32,6 +34,7 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
     """Write DataFrame out locally as parquet file"""
     path = Path(f"data/{color}/{dataset_file}.parquet")
     df.to_parquet(path, compression="gzip")
+
     return path
 
 
@@ -40,6 +43,7 @@ def write_gcs(path: Path) -> None:
     """Upload local parquet file to GCS"""
     gcs_block = GcsBucket.load("zoom-gcs")
     gcs_block.upload_from_path(from_path=f"{path}", to_path=path)
+
     return
 
 

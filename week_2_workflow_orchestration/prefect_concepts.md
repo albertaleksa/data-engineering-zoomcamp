@@ -35,6 +35,8 @@
   pandas-gbq==0.18.1
   psycopg2-binary==2.9.5
   sqlalchemy==1.4.46
+  #
+  pyarrow==10.0.1
   ```
 
 ### Ingest data

@@ -45,7 +45,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 :movie_camera: [Video](https://www.youtube.com/watch?v=W-rMz_2GwqQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
 
-### 4. From Google Cloud Storage to Big Query
+### 4. [From Google Cloud Storage to Big Query](from_gcs_to_bq.md)
 
 * Flow 2: From GCS to BigQuery
 

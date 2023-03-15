@@ -62,7 +62,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=QrDxPjX10iw&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### 6. Schedules & Docker Storage with Infrastructure
+### 6. [Schedules & Docker Storage with Infrastructure](schedules_docker_storage.md)
 
 * Scheduling a deployment
 * Flow code storage

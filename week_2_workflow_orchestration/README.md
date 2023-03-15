@@ -51,7 +51,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=Cx5jt-V5sgE&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### 5. Parametrizing Flow & Deployments 
+### 5. [Parametrizing Flow & Deployments](param_flow_deploy.md)
 
 * Parametrizing the script from your flow
 * Parameter validation with Pydantic

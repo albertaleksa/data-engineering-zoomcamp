@@ -151,11 +151,11 @@ How many rows were processed by the script?
 
 - 88,019
 - 192,297
-- 88,605
+- - 88,605
 - 190,225
 
 ### Solution:
-1) Create an empty file in `data/green` folder so that git will upload folder to Github.
+1) Create an empty file in `data/green` folder in the root of project so that git will upload folder to Github.
 2) Use `parameterized_flow_hw.py` script from **Question1**
 3) Create Github Block in `UI Orion`:
    > Blocks -> Add -> GitHub:
@@ -182,7 +182,7 @@ How many rows were processed by the script?
    ```
 5) Deploy and apply:
    ```
-   $ prefect deployment build parameterized_flow_hw.py:etl_parent_flow -n de-hw-4-git -sb github/de-zoom -a
+   $ prefect deployment build cohorts/2023/week_2_workflow_orchestration/parameterized_flow_hw.py:etl_parent_flow -n de-hw-4-git -sb github/de-zoom -a
    ```
 6) Run deployment **etl-parent-flow/de-hw-4-git** with needed params:
     ```
@@ -190,11 +190,8 @@ How many rows were processed by the script?
     ```
 7) Result:
     ```
-    rows: 447770
+    rows: 88605
     ```
-```
-
-```
 
 ## Question 5. Email or Slack notifications
 
@@ -222,17 +219,35 @@ How many rows were processed by the script?
 - `125,268`
 - `377,922`
 - `728,390`
-- `514,392`
+- - `514,392`
 
+### Solution:
+1) Create Notification
+2) Run deployment
+   ```
+   $ prefect deployment run etl-parent-flow/de-hw-4-git -p "color=green" -p "year=2019" -p "months=[4]"
+   ```
 
+7) Result:
+    ```
+    rows: 514392
+    ```
 ## Question 6. Secrets
 
 Prefect Secret blocks provide secure, encrypted storage in the database and obfuscation in the UI. Create a secret block in the UI that stores a fake 10-digit password to connect to a third-party service. Once you’ve created your block in the UI, how many characters are shown as asterisks (*) on the next page of the UI?
 
 - 5
 - 6
-- 8
+- - 8
 - 10
+
+### Solution:
+> In `UI Orion` Blocks -> Add -> Secret:
+> 
+   ```
+   Value
+   ********
+   ```
 
 
 ## Submitting the solutions

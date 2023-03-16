@@ -15,7 +15,7 @@
 
 [**Week 2: Workflow Orchestration**](week_2_workflow_orchestration)
 
-* [Homework](week_2_workflow_orchestration/homework.md)
+* [Homework](week_2_workflow_orchestration/homework.md) and [My Solution](week_2_workflow_orchestration/homework_my_solutions.md)
 * [Office hours part 1](https://www.youtube.com/watch?v=a_nmLHb8hzw&list=PL3MmuxUbc_hJjEePXIdE-LVUx_1ZZjYGW&index=5) and [part 2](https://www.youtube.com/watch?v=PK8yyMY54Vk&list=PL3MmuxUbc_hJjEePXIdE-LVUx_1ZZjYGW&index=7) 
 
 [**Week 3: Data Warehouse**](week_3_data_warehouse)

@@ -6,6 +6,7 @@
     $ cd ~/.ssh
     $ ssh-keygen -t rsa -f ~/.ssh/gcp -C albert_tests -b 2048
     ```
+
     > pass: empty
 
 ### 2. Put generated public key to google cloud:

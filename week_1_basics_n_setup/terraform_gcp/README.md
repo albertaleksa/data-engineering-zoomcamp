@@ -7,7 +7,7 @@
 ### Terraform Concepts
 [Terraform Overview](terraform_overview.md)
 
-### GCP setup
+### [GCP setup](gcp_overview.md)
 
 1. [Setup for First-time](gcp_overview.md#initial-setup)
 2. [IAM / Access specific to this course](gcp_overview.md#setup-for-access)

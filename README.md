@@ -1,9 +1,25 @@
 # Data Engineering Zoomcamp
 Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 
+### Table of contents
+
+- [Syllabus](#syllabus)
+  - [Week 1: Introduction & Prerequisites](#week-1-introduction--prerequisites)
+  - [Week 2: Workflow Orchestration](#week-2-workflow-orchestration)
+  - [Week 3: Data Warehouse](#week-3-data-warehouse)
+  - [Week 4: Analytics engineering](#week-4-analytics-engineering)
+  - [Week 5: Batch processing](#week-5-batch-processing)
+  - [Week 6: Streaming](#week-6-streaming)
+  - [Week 7, 8 & 9: Project](#week-7-8--9-project)
+  - [Workshop: Maximizing Confidence in Your Data Model Changes with dbt and PipeRider](#workshop-maximizing-confidence-in-your-data-model-changes-with-dbt-and-piperider)
+- [Overview](#overview)
+  - [Architecture diagram](#architecture-diagram)
+  - [Technologies](#technologies)
+  - [Tools](#tools)
+
 ## Syllabus
 
-### [Week 1: Introduction & Prerequisites](week_1_basics_n_setup)
+### [Week 1: Introduction & Prerequisites](week_1_basics_n_setup/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_1_basics_n_setup)
 
 * Course overview
@@ -15,7 +31,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Homework
 
 
-### [Week 2: Workflow Orchestration](week_2_workflow_orchestration)
+### [Week 2: Workflow Orchestration](week_2_workflow_orchestration/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_2_workflow_orchestration)
 
 * Data Lake
@@ -27,7 +43,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Homework
 
 
-### [Week 3: Data Warehouse](week_3_data_warehouse)
+### [Week 3: Data Warehouse](week_3_data_warehouse/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_3_data_warehouse)
 
 * Data Warehouse
@@ -39,7 +55,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * BigQuery Machine Learning
 
 
-### [Week 4: Analytics engineering](week_4_analytics_engineering/)
+### [Week 4: Analytics engineering](week_4_analytics_engineering/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering)
 
 * Basics of analytics engineering
@@ -87,7 +103,7 @@ Putting everything we learned to practice
 
 ### Architecture diagram
 
-![Architecture diagram](https://github.com/DreadYo/data-engineering-zoomcamp/blob/master/images/arch.png)
+![Architecture diagram](images/arch.png)
 
 ### Technologies
 

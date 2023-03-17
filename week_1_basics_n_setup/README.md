@@ -15,6 +15,8 @@ if you have troubles setting up the environment and following along with the vid
 
 [Code](docker_sql)
 
+[Commands for Docker](docker_sql/README.md)
+
 * [Introduction to Docker](https://www.youtube.com/watch?v=EYNwNlOrpr0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
   * Why do we need Docker
   * Creating a simple "data pipeline" in Docker
@@ -50,7 +52,7 @@ if you have troubles setting up the environment and following along with the vid
 * Optional: If you are willing to do the steps from "Ingesting NY Taxi Data to Postgres" till "Running Postgres and pgAdmin with Docker-Compose" with Windows Subsystem Linux please check [Docker Module Walk-Through on WSL](https://www.youtube.com/watch?v=Mv4zFm2AwzQ)
 
 
-### GCP + Terraform
+### [GCP + Terraform](terraform_gcp/README.md)
 
 [Code](terraform_gcp)
 
@@ -64,7 +66,7 @@ if you have troubles setting up the environment and following along with the vid
   * [Workshop](terraform_gcp/terraform)
 
 
-### Environment setup 
+### [Environment setup](terraform_gcp/setup_env.md)
 
 For the course you'll need:
 

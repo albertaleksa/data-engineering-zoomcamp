@@ -2,6 +2,8 @@
 
 [Video](https://www.youtube.com/watch?v=18jIzE41fJ4&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=2)
 
+[Commands](terraform/README.md)
+
 ### Concepts
 
 #### Introduction

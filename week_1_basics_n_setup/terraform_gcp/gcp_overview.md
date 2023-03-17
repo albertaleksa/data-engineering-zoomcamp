@@ -49,7 +49,7 @@ For this course, we'll use a free version (upto EUR 300 credits).
    
 3. Please ensure `GOOGLE_APPLICATION_CREDENTIALS` env-var is set.
    ```
-   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+   $ export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
    ```
  
 ### Terraform Workshop to create GCP Infra

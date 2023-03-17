@@ -7,16 +7,33 @@ Python code from videos is linked [below](#code-repository).
 
 Also, if you find the commands too small to view in Kalise's videos, here's the [transcript with code for the second Prefect video](https://github.com/discdiver/prefect-zoomcamp/tree/main/flows/01_start) and the [fifth Prefect video](https://github.com/discdiver/prefect-zoomcamp/tree/main/flows/01_start).
 
+### Table of contents
+
+- [Data Lake (GCS)](#week-1-introduction--prerequisites)
+- [Introduction to Workflow orchestration](#week-2-workflow-orchestration)
+- [Introduction to Prefect concepts](#week-3-data-warehouse)
+- [ETL with GCP & Prefect](#week-4-analytics-engineering)
+- [From Google Cloud Storage to Big Query](#week-5-batch-processing)
+- [Parametrizing Flow & Deployments](#week-6-streaming)
+- [Schedules & Docker Storage with Infrastructure](#week-7-8--9-project)
+- [Prefect Cloud and Additional Resources](#workshop-maximizing-confidence-in-your-data-model-changes-with-dbt-and-piperider)
+- [Code repository](#overview)
+- [Homework](#architecture-diagram)
+- [Community notes](#technologies)
+- [2022 notes](#tools)
+
 ### [Data Lake (GCS)](data_lake.md)
 
 * What is a Data Lake
 * ELT vs. ETL
 * Alternatives to components (S3/HDFS, Redshift, Snowflake etc.)
-* [Video](https://www.youtube.com/watch?v=W3Zm6rjOq70&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
-* [Slides](https://docs.google.com/presentation/d/1RkH-YhBz2apIjYZAxUz2Uks4Pt51-fVWVN9CcH9ckyY/edit?usp=sharing)
+
+:movie_camera: [Video](https://www.youtube.com/watch?v=W3Zm6rjOq70&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+
+[Slides](https://docs.google.com/presentation/d/1RkH-YhBz2apIjYZAxUz2Uks4Pt51-fVWVN9CcH9ckyY/edit?usp=sharing)
 
 
-### 1. [Introduction to Workflow orchestration](workflow_orchestration.md)
+### [Introduction to Workflow orchestration](workflow_orchestration.md)
 
 * What is orchestration?
 * Workflow orchestrators vs. other types of orchestrators
@@ -26,7 +43,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 :movie_camera: [Video](https://www.youtube.com/watch?v=8oLs6pzHp68&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
 
-### 2. [Introduction to Prefect concepts](prefect_concepts.md)
+### [Introduction to Prefect concepts](prefect_concepts.md)
 
 * What is Prefect?
 * Installing Prefect
@@ -38,20 +55,20 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=cdtN6dhp708&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### 3. [ETL with GCP & Prefect](etl_gcp_prefect.md)
+### [ETL with GCP & Prefect](etl_gcp_prefect.md)
 
 * Flow 1: Putting data to Google Cloud Storage 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=W-rMz_2GwqQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
 
-### 4. [From Google Cloud Storage to Big Query](from_gcs_to_bq.md)
+### [From Google Cloud Storage to Big Query](from_gcs_to_bq.md)
 
 * Flow 2: From GCS to BigQuery
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=Cx5jt-V5sgE&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### 5. [Parametrizing Flow & Deployments](param_flow_deploy.md)
+### [Parametrizing Flow & Deployments](param_flow_deploy.md)
 
 * Parametrizing the script from your flow
 * Parameter validation with Pydantic
@@ -62,7 +79,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=QrDxPjX10iw&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### 6. [Schedules & Docker Storage with Infrastructure](schedules_docker_storage.md)
+### [Schedules & Docker Storage with Infrastructure](schedules_docker_storage.md)
 
 * Scheduling a deployment
 * Flow code storage
@@ -70,8 +87,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=psNSzqTsi-s&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-### 7. Prefect Cloud and Additional Resources 
-
+### Prefect Cloud and Additional Resources 
 
 * Using Prefect Cloud instead of local Prefect
 * Workspaces

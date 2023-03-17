@@ -1,4 +1,10 @@
-## Week 1 Homework
+>[Back to Main Homework page](../README.md)
+>
+>[Back to Week 1 Main page](../../../week_1_basics_n_setup/README.md)
+>
+> [My Solutions for homework](homework_my_solutions.md)
+
+## Week 1 Homework (Terraform)
 
 In this homework we'll prepare the environment by creating resources in GCP with Terraform.
 
@@ -25,3 +31,5 @@ Paste the output of this command into the homework submission form.
 * You can submit your homework multiple times. In this case, only the last submission will be used. 
 
 Deadline: 30 January (Monday), 22:00 CET
+
+_[Back to the top](#week-1-homework--terraform-)_

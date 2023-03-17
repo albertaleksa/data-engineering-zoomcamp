@@ -1,16 +1,10 @@
 >[Back to Main Homework page](../README.md)
-
+>
 >[Back to Week 2 Main page](../../../week_2_workflow_orchestration/README.md)
-
->Previous Theme: [Parametrizing Flow & Deployments](param_flow_deploy.md)
-
->Next Theme: [Introduction to Prefect concepts](prefect_concepts.md)
-
+>
 > [My Solutions for homework](homework_my_solutions.md)
 
 ## Week 2 Homework
-
-
 
 The goal of this homework is to familiarise users with workflow orchestration and observation. 
 
@@ -128,3 +122,5 @@ Deadline: 8 February (Wednesday), 22:00 CET
 
 * Video: https://youtu.be/L04lvYqNlc0
 * Code: https://github.com/discdiver/prefect-zoomcamp/tree/main/flows/04_homework
+
+_[Back to the top](#week-2-homework)_

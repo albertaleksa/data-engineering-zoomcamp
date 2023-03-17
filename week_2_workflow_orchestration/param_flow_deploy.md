@@ -1,7 +1,7 @@
 >[Back to Week Menu](README.md)
-
+>
 >Previous Theme: [From Google Cloud Storage to Big Query](from_gcs_to_bq.md)
-
+>
 >Next Theme: [Schedules & Docker Storage with Infrastructure](schedules_docker_storage.md)
 
 ## Parametrizing Flow & Deployments
@@ -120,3 +120,5 @@ There are two ways to create a deployment:
 We can setup a notification.
 
 Go to the Orion UI, select **Notifications** and create a notification.
+
+_[Back to the top](#parametrizing-flow--deployments)_

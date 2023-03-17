@@ -1,4 +1,10 @@
-## Week 1 Homework
+>[Back to Main Homework page](../README.md)
+>
+>[Back to Week 1 Main page](../../../week_1_basics_n_setup/README.md)
+>
+> [My Solutions for homework](homework_my_solutions.md)
+
+## Week 1 Homework (Docker & SQL)
 
 In this homework we'll prepare the environment 
 and practice with Docker and SQL
@@ -102,3 +108,5 @@ Deadline: 30 January (Monday), 22:00 CET
 ## Solution
 
 See here: https://www.youtube.com/watch?v=KIh_9tZiroA
+
+_[Back to the top](#week-1-homework--docker--sql-)_

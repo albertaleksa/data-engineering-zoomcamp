@@ -1,13 +1,8 @@
 >[Back to Week Menu](README.md)
-
+>
 >Previous Theme: [Parametrizing Flow & Deployments](param_flow_deploy.md)
-
->Next Theme: [Introduction to Prefect concepts](prefect_concepts.md)
-
-Homework can be found [here](../cohorts/2023/week_2_workflow_orchestration/homework.md).
-
-Solution for homework [here](../cohorts/2023/week_2_workflow_orchestration/homework_my_solutions.md).
-
+>
+> [Homework](../cohorts/2023/week_2_workflow_orchestration/homework.md)
 
 ## Schedules & Docker Storage with Infrastructure
 
@@ -148,3 +143,5 @@ To avoid it I had to remove *caching* from **fetch** task from file `parameteriz
 1) Brought our code into a Docker container and a Docker image
 2) Put that Docker image into our DockerHub
 3) Ran that code in Docker container on our local machine.
+
+_[Back to the top](#schedules--docker-storage-with-infrastructure)_

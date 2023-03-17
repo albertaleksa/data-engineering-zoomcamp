@@ -1,7 +1,7 @@
 >[Back to Week Menu](README.md)
-
+>
 >Previous Theme: [ETL with GCP & Prefect](etl_gcp_prefect.md)
-
+>
 >Next Theme: [Parametrizing Flow & Deployments](param_flow_deploy.md)
 
 ## From Google Cloud Storage to Big Query
@@ -84,4 +84,4 @@ def write_bq(df: pd.DataFrame) -> None:
     )
 ```
 
-
+_[Back to the top](#from-google-cloud-storage-to-big-query)_

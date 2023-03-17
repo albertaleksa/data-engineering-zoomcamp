@@ -1,18 +1,26 @@
+>[Back to Week Menu](README.md)
+
+>Next Theme: [Introduction to Workflow orchestration](workflow_orchestration.md)
+
 ## Data Lake
+
+_[Slides](https://docs.google.com/presentation/d/1RkH-YhBz2apIjYZAxUz2Uks4Pt51-fVWVN9CcH9ckyY/edit?usp=sharing)_
+
+_:movie_camera: [Video](https://www.youtube.com/watch?v=W3Zm6rjOq70&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_
 
 - Ingest data as quick as possible
 - Make it available to anyone who wants data
 - Associate metadata for faster access
 - secure, scalable, fast and cheap
 
-![Data Lake Features](https://github.com/DreadYo/data-engineering-zoomcamp/blob/master/images/data_lake_features.png)
+![Data Lake Features](../images/data_lake_features.png)
 
 ### Data Lake vs Data Warehouse
 
 - Data Lake facilitate fast storing and fast access
 - Storing the data fast is the priority of Data Lake; We may not need data now, but we might later.
 
-![Data Lake vs Data Warehouse](https://github.com/DreadYo/data-engineering-zoomcamp/blob/master/images/data_lake_vs_dw.png)
+![Data Lake vs Data Warehouse](../images/data_lake_vs_dw.png)
 
 
 ### How did it start?
@@ -46,3 +54,5 @@
 - Google Cloud Platform > Cloud Storage
 - Amazon Web Services > Amazon S3
 - Microsoft Azure > Azure BLOB Storage
+
+_[Back to the top](#data-lake)_

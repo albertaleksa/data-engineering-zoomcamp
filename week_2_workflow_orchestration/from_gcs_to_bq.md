@@ -1,3 +1,9 @@
+>[Back to Week Menu](README.md)
+
+>Previous Theme: [ETL with GCP & Prefect](etl_gcp_prefect.md)
+
+>Next Theme: [Parametrizing Flow & Deployments](param_flow_deploy.md)
+
 ## From Google Cloud Storage to Big Query
 
 ## Flow 2: From GCS to BigQuery

@@ -1,4 +1,26 @@
+>[Back to Main course page](../README.md)
+
+>Previous Week: [2: Workflow Orchestration](../week_2_workflow_orchestration/README.md)
+
+>Next Week: [4: Analytics engineering](../week_4_analytics_engineering/README.md)
+
 ## Week 3: Data Warehouse and BigQuery
+
+### Table of contents
+
+- [Data Lake (GCS)](#data-lake-gcs)
+- [Introduction to Workflow orchestration](#introduction-to-workflow-orchestration)
+- [Introduction to Prefect concepts](#introduction-to-prefect-concepts)
+- [ETL with GCP & Prefect](#etl-with-gcp--prefect)
+- [From Google Cloud Storage to Big Query](#from-google-cloud-storage-to-big-query)
+- [Parametrizing Flow & Deployments](#parametrizing-flow--deployments)
+- [Schedules & Docker Storage with Infrastructure](#schedules--docker-storage-with-infrastructure)
+- [Prefect Cloud and Additional Resources](#prefect-cloud-and-additional-resources)
+- [Code repository](#code-repository)
+- [Homework](#homework)
+- [Community notes](#community-notes)
+- [2022 notes](#2022-notes)
+
 
 - [Slides](https://docs.google.com/presentation/d/1a3ZoBAXFk8-EhUsd7rAZd-5p_HpltkzSeujjRGB2TAI/edit?usp=sharing)  
 - [Big Query basic SQL](big_query.sql)

@@ -1,3 +1,9 @@
+>[Back to Week Menu](README.md)
+
+>Previous Theme: [Introduction to Prefect concepts](prefect_concepts.md)
+
+>Next Theme: [From Google Cloud Storage to Big Query](from_gcs_to_bq.md)
+
 ## ETL with GCP & Prefect
 
 ## Flow 1: Putting data to Google Cloud Storage

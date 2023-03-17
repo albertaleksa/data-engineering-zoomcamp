@@ -1,11 +1,10 @@
+>[Back to Main course page](../README.md)
+>
+>Previous Week: [1: Introduction & Prerequisites](../week_1_basics_n_setup/README.md)
+>
+>Next Week: [3: Data Warehouse](../week_3_data_warehouse/README.md)
+
 ## Week 2: Workflow Orchestration
-
-> If you're looking for Airflow videos from the 2022 edition,
-> check the [2022 cohort folder](../cohorts/2022/week_2_data_ingestion/).
-
-Python code from videos is linked [below](#code-repository).
-
-Also, if you find the commands too small to view in Kalise's videos, here's the [transcript with code for the second Prefect video](https://github.com/discdiver/prefect-zoomcamp/tree/main/flows/01_start) and the [fifth Prefect video](https://github.com/discdiver/prefect-zoomcamp/tree/main/flows/01_start).
 
 ### Table of contents
 
@@ -24,13 +23,12 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 ### [Data Lake (GCS)](data_lake.md)
 
+* [Slides](https://docs.google.com/presentation/d/1RkH-YhBz2apIjYZAxUz2Uks4Pt51-fVWVN9CcH9ckyY/edit?usp=sharing)
 * What is a Data Lake
 * ELT vs. ETL
 * Alternatives to components (S3/HDFS, Redshift, Snowflake etc.)
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=W3Zm6rjOq70&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
-
-[Slides](https://docs.google.com/presentation/d/1RkH-YhBz2apIjYZAxUz2Uks4Pt51-fVWVN9CcH9ckyY/edit?usp=sharing)
 
 _[Back to the top](#table-of-contents)_
 
@@ -119,6 +117,8 @@ _[Back to the top](#table-of-contents)_
 ### Homework 
 Homework can be found [here](../cohorts/2023/week_2_workflow_orchestration/homework.md).
 
+Solution for homework [here](../cohorts/2023/week_2_workflow_orchestration/homework_my_solutions.md).
+
 _[Back to the top](#table-of-contents)_
 
 ## Community notes
@@ -147,5 +147,9 @@ Most of these notes are about Airflow, but you might find them useful.
 * [Notes from Vincenzo Galante](https://binchentso.notion.site/Data-Talks-Club-Data-Engineering-Zoomcamp-8699af8e7ff94ec49e6f9bdec8eb69fd)
 * More on [Pandas vs SQL, Prefect capabilities, and testing your data](https://medium.com/@verazabeida/zoomcamp-2023-week-3-7f27bb8c483f), by Vera
 
+> If you're looking for Airflow videos from the 2022 edition,
+> check the [2022 cohort folder](../cohorts/2022/week_2_data_ingestion/).
+
+>Also, if you find the commands too small to view in Kalise's videos, here's the [transcript with code for the second Prefect video](https://github.com/discdiver/prefect-zoomcamp/tree/main/flows/01_start) and the [fifth Prefect video](https://github.com/discdiver/prefect-zoomcamp/tree/main/flows/01_start).
 
 _[Back to the top](#table-of-contents)_

@@ -1,3 +1,9 @@
+>[Back to Week Menu](README.md)
+
+>Previous Theme: [From Google Cloud Storage to Big Query](from_gcs_to_bq.md)
+
+>Next Theme: [Schedules & Docker Storage with Infrastructure](schedules_docker_storage.md)
+
 ## Parametrizing Flow & Deployments
 
 ### Prefect Flows: Parameterized Flow

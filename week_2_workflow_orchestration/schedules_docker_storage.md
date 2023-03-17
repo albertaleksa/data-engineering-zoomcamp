@@ -1,3 +1,14 @@
+>[Back to Week Menu](README.md)
+
+>Previous Theme: [Parametrizing Flow & Deployments](param_flow_deploy.md)
+
+>Next Theme: [Introduction to Prefect concepts](prefect_concepts.md)
+
+Homework can be found [here](../cohorts/2023/week_2_workflow_orchestration/homework.md).
+
+Solution for homework [here](../cohorts/2023/week_2_workflow_orchestration/homework_my_solutions.md).
+
+
 ## Schedules & Docker Storage with Infrastructure
 
 ### Scheduling Flows on Orion UI

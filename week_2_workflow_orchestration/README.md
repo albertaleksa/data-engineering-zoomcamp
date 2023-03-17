@@ -9,18 +9,18 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 ### Table of contents
 
-- [Data Lake (GCS)](#week-1-introduction--prerequisites)
-- [Introduction to Workflow orchestration](#week-2-workflow-orchestration)
-- [Introduction to Prefect concepts](#week-3-data-warehouse)
-- [ETL with GCP & Prefect](#week-4-analytics-engineering)
-- [From Google Cloud Storage to Big Query](#week-5-batch-processing)
-- [Parametrizing Flow & Deployments](#week-6-streaming)
-- [Schedules & Docker Storage with Infrastructure](#week-7-8--9-project)
-- [Prefect Cloud and Additional Resources](#workshop-maximizing-confidence-in-your-data-model-changes-with-dbt-and-piperider)
-- [Code repository](#overview)
-- [Homework](#architecture-diagram)
-- [Community notes](#technologies)
-- [2022 notes](#tools)
+- [Data Lake (GCS)](#data-lake-gcs)
+- [Introduction to Workflow orchestration](#introduction-to-workflow-orchestration)
+- [Introduction to Prefect concepts](#introduction-to-prefect-concepts)
+- [ETL with GCP & Prefect](#etl-with-gcp--prefect)
+- [From Google Cloud Storage to Big Query](#from-google-cloud-storage-to-big-query)
+- [Parametrizing Flow & Deployments](#parametrizing-flow--deployments)
+- [Schedules & Docker Storage with Infrastructure](#schedules--docker-storage-with-infrastructure)
+- [Prefect Cloud and Additional Resources](#prefect-cloud-and-additional-resources)
+- [Code repository](#code-repository)
+- [Homework](#homework)
+- [Community notes](#community-notes)
+- [2022 notes](#2022-notes)
 
 ### [Data Lake (GCS)](data_lake.md)
 
@@ -32,6 +32,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 [Slides](https://docs.google.com/presentation/d/1RkH-YhBz2apIjYZAxUz2Uks4Pt51-fVWVN9CcH9ckyY/edit?usp=sharing)
 
+_[Back to the top](#table-of-contents)_
 
 ### [Introduction to Workflow orchestration](workflow_orchestration.md)
 
@@ -42,6 +43,7 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=8oLs6pzHp68&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
+_[Back to the top](#table-of-contents)_
 
 ### [Introduction to Prefect concepts](prefect_concepts.md)
 
@@ -54,6 +56,8 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 * Orion UI
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=cdtN6dhp708&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+
+_[Back to the top](#table-of-contents)_
 
 ### [ETL with GCP & Prefect](etl_gcp_prefect.md)
 
@@ -68,6 +72,8 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=Cx5jt-V5sgE&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
+_[Back to the top](#table-of-contents)_
+
 ### [Parametrizing Flow & Deployments](param_flow_deploy.md)
 
 * Parametrizing the script from your flow
@@ -79,6 +85,8 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=QrDxPjX10iw&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
+_[Back to the top](#table-of-contents)_
+
 ### [Schedules & Docker Storage with Infrastructure](schedules_docker_storage.md)
 
 * Scheduling a deployment
@@ -86,6 +94,8 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 * Running tasks in Docker
 
 :movie_camera: [Video](https://www.youtube.com/watch?v=psNSzqTsi-s&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+
+_[Back to the top](#table-of-contents)_
 
 ### Prefect Cloud and Additional Resources 
 
@@ -100,12 +110,16 @@ Also, if you find the commands too small to view in Kalise's videos, here's the 
 * [Prefect Cloud](https://app.prefect.cloud/)
 * [Prefect Slack](https://prefect-community.slack.com)
 
+_[Back to the top](#table-of-contents)_
+
 ### Code repository
 
 [Code from videos](https://github.com/discdiver/prefect-zoomcamp) (with a few minor enhancements)
 
 ### Homework 
 Homework can be found [here](../cohorts/2023/week_2_workflow_orchestration/homework.md).
+
+_[Back to the top](#table-of-contents)_
 
 ## Community notes
 
@@ -132,3 +146,6 @@ Most of these notes are about Airflow, but you might find them useful.
 * [Blog, notes, walkthroughs by Sandy Behrens](https://learningdataengineering540969211.wordpress.com/2022/01/30/week-2-de-zoomcamp-2-3-2-ingesting-data-to-gcp-with-airflow/)
 * [Notes from Vincenzo Galante](https://binchentso.notion.site/Data-Talks-Club-Data-Engineering-Zoomcamp-8699af8e7ff94ec49e6f9bdec8eb69fd)
 * More on [Pandas vs SQL, Prefect capabilities, and testing your data](https://medium.com/@verazabeida/zoomcamp-2023-week-3-7f27bb8c483f), by Vera
+
+
+_[Back to the top](#table-of-contents)_

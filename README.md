@@ -30,6 +30,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Preparing the environment for the course
 * Homework
 
+_[Back to the top](#table-of-contents)_
 
 ### [Week 2: Workflow Orchestration](week_2_workflow_orchestration/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_2_workflow_orchestration)
@@ -42,6 +43,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Prefect Cloud and additional resources
 * Homework
 
+_[Back to the top](#table-of-contents)_
 
 ### [Week 3: Data Warehouse](week_3_data_warehouse/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_3_data_warehouse)
@@ -54,6 +56,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Integrating BigQuery with Airflow
 * BigQuery Machine Learning
 
+_[Back to the top](#table-of-contents)_
 
 ### [Week 4: Analytics engineering](week_4_analytics_engineering/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering)
@@ -67,6 +70,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Deployment to the cloud and locally
 * Visualizing the data with google data studio and metabase
 
+_[Back to the top](#table-of-contents)_
 
 ### [Week 5: Batch processing](week_5_batch_processing)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_5_batch_processing)
@@ -77,6 +81,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Spark SQL
 * Internals: GroupBy and joins
 
+_[Back to the top](#table-of-contents)_
 
 ### [Week 6: Streaming](week_6_stream_processing)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_6_stream_processing)
@@ -86,6 +91,7 @@ Original content: https://github.com/DataTalksClub/data-engineering-zoomcamp
 * Kafka Streams
 * Kafka Connect and KSQL
 
+_[Back to the top](#table-of-contents)_
 
 ### [Week 7, 8 & 9: Project](week_7_project)
 
@@ -93,6 +99,8 @@ Putting everything we learned to practice
 
 * Week 7 and 8: working on your project
 * Week 9: reviewing your peers
+
+_[Back to the top](#table-of-contents)_
 
 ### Workshop: Maximizing Confidence in Your Data Model Changes with dbt and PipeRider
 
@@ -125,3 +133,4 @@ Putting everything we learned to practice
 * Google Cloud SDK
 * Terraform
 
+_[Back to the top](#table-of-contents)_

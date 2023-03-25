@@ -99,6 +99,11 @@ There are two ways to create a deployment:
   ```
 - It's mean send all of the metadata to the prefect API
 
+#### Or build and apply in one command:
+  ```
+  $ prefect deployment build flows/03_deployments/parameterized_flow.py:etl_parent_flow -n "Parameterized ETL" -a
+  ```
+
 ### Prefect Deployments on Prefect Orion UI
 - In Orion UI we can see our Deployment in **Deployments**
 - We can **edit** it

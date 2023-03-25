@@ -22,7 +22,7 @@
 
 [**Week 3: Data Warehouse**](week_3_data_warehouse)
 
-* [Homework](week_3_data_warehouse/homework.md)
+* [Homework](week_3_data_warehouse/homework.md) and [My Solution](week_3_data_warehouse/homework_my_solutions.md)
 * [Office hours](https://www.youtube.com/watch?v=QXfmtJp3bXE&list=PL3MmuxUbc_hJjEePXIdE-LVUx_1ZZjYGW&index=9)
 
 [**Week 4: Analytics Engineering**](week_4_analytics_engineering/)

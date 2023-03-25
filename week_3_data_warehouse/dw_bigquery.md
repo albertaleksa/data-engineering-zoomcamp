@@ -5,6 +5,8 @@
 ## Data Warehouse and BigQuery
 _[Video source](https://youtu.be/jrHljAoD6nM)_
 
+[Big Query basic SQL](big_query.sql)
+
 
 ### OLAP vs OLTP
 

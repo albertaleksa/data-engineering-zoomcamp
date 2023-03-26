@@ -72,7 +72,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Week 5: Batch processing](week_5_batch_processing)
+### [Week 5: Batch processing](week_5_batch_processing/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_5_batch_processing)
 
 * Batch processing

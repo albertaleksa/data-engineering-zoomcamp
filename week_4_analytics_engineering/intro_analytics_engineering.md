@@ -1,6 +1,6 @@
 >[Back to Week Menu](README.md)
 >
->Next Theme: [](.md)
+>Next Theme: [What is dbt?](what_is_dbt.md)
 
 ## Introduction to Analytics Engineering
 _[Video source](https://www.youtube.com/watch?v=uF76d5EmdtU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=32)_
@@ -31,11 +31,15 @@ The introduction of all of these tools changed the way the data teams work as we
 
 However, with the introduction of these tools, both data scientists and analysts find themselves writing more code even though they're not software engineers and writing code isn't their top priority.  Data engineers are good software engineers but they don't have the training in how the data is going to be used  by the business users.
 
+![roles](../images/04_roles.png)
+
 The ***analytics engineer*** is the role that tries to fill the gap: it introduces the good software engineering practices to the efforts of data analysts and data scientists. The analytics engineer may be exposed to the following tools:
 1. Data Loading (Stitch)
 2. Data Storing (Data Warehouses)
 3. Data Modeling (dbt, Dataform)
 4. Data Presentation (BI tools like Looker, Mode, Tableau)
+
+![tooling](../images/04_tooling.png)
 
 This lesson focuses on the last 2 parts: Data Modeling and Data Presentation.
 
@@ -47,11 +51,13 @@ _[Back to the top](#introduction-to-analytics-engineering)_
 
 In lesson 2 we covered the difference between [ETL and ELT](../week_2_workflow_orchestration/data_lake.md#etl-vs-elt).
 
-![etl vs elt](../images//04_01.png)
+![etl vs elt](../images/04_01.png)
 
 In this lesson we will cover the _transform_ step in the ELT process.
 
 ### Dimensional Modeling
+
+![kimball](../images/04_kimball.png)
 
 [Ralph Kimball's Dimensional Modeling](https://www.wikiwand.com/en/Dimensional_modeling#:~:text=Dimensional%20modeling%20(DM)%20is%20part,use%20in%20data%20warehouse%20design.) is an approach to Data Warehouse design which focuses on 2 main points:
 * Deliver data which is understandable to the business users.
@@ -74,6 +80,8 @@ Dimensional Modeling is based around 2 important concepts:
     * Can be thought of as _"nouns"_.
 * Dimensional Modeling is built on a [***star schema***](https://www.wikiwand.com/en/Star_schema) with fact tables surrounded by dimension tables.
 
+![elements](../images/04_elements.png)
+
 A good way to understand the _architecture_ of Dimensional Modeling is by drawing an analogy between dimensional modeling and a restaurant:
 * Stage Area:
     * Contains the raw data.
@@ -88,6 +96,6 @@ A good way to understand the _architecture_ of Dimensional Modeling is by drawin
     * Exposure to business stakeholder.
     * Similar to the dining room in a restaurant.
 
-
+![Architecture of Dimensional Modeling](../images/04_arch.png)
 
 _[Back to the top](#introduction-to-analytics-engineering)_

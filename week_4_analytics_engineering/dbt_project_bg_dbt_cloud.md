@@ -24,26 +24,4 @@ _[Video source](https://www.youtube.com/watch?v=iMxh6s_wL4Q&list=PL3MmuxUbc_hJed
 
 _Optional_: If you feel more comfortable developing locally you could use a local installation of dbt as well. You can follow the [official dbt documentation](https://docs.getdbt.com/dbt-cli/installation) or follow the [dbt with BigQuery on Docker](docker_setup/README.md) guide to setup dbt locally on docker. You will need to install the latest version (1.0) with the BigQuery adapter (dbt-bigquery). 
 
-
-
-
-
---
-
-
-## Setting up dbt
-
-
-## dbt Cloud
-
-
-
-In order to use dbt Cloud you will need to create a user account. Got to the [dbt homepage](https://www.getdbt.com/) and sign up.
-
-
-
-
-
-
-
 _[Back to the top](#starting-a-dbt-project)_

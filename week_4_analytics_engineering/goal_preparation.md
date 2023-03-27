@@ -32,6 +32,29 @@ By this stage of the course you should have already:
   $ prefect deployment run etl-parent-flow/web_gc -p "color=yellow" -p "year=2020" -p "months=[1,2,3,4,5,6,7,8,9,10,11,12]"
   $ prefect deployment run etl-parent-flow/web_gc -p "color=green" -p "year=2020" -p "months=[1,2,3,4,5,6,7,8,9,10,11,12]"
   ```
+2. Create external tables for this data in BQ:
+  ```sql
+  CREATE OR REPLACE EXTERNAL TABLE `trips_data_all.fhv_tripdata`
+  OPTIONS (
+    format = 'CSV',
+    compression = 'GZIP',
+    uris = ['gs://dtc_data_lake_substantial-mix-378619/data/fhv/fhv_tripdata_2019-*.csv.gz']
+  );
+  
+  CREATE OR REPLACE EXTERNAL TABLE `trips_data_all.green_tripdata`
+  OPTIONS (
+    format = 'CSV',
+    compression = 'GZIP',
+    uris = ['gs://dtc_data_lake_substantial-mix-378619/data/green/green_tripdata_2019-*.csv.gz', 'gs://dtc_data_lake_substantial-mix-378619/data/green/green_tripdata_2020-*.csv.gz']
+  );
+  
+  CREATE OR REPLACE EXTERNAL TABLE `trips_data_all.yellow_tripdata`
+  OPTIONS (
+    format = 'CSV',
+    compression = 'GZIP',
+    uris = ['gs://dtc_data_lake_substantial-mix-378619/data/yellow/yellow_tripdata_2019-*.csv.gz', 'gs://dtc_data_lake_substantial-mix-378619/data/yellow/yellow_tripdata_2020-*.csv.gz']
+  );
+  ```
 _Note:_
   *  _A quick hack has been shared to load that data quicker, check instructions in [week3/extras](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_3_data_warehouse/extras)_
   * _If you recieve an error stating "Permission denied while globbing file pattern." when attemting to run fact_trips.sql this video may be helpful in resolving the issue_ 

@@ -11,6 +11,8 @@
 - [Introduction to Analytics Engineering](#introduction-to-analytics-engineering)
 - [What is dbt?](#what-is-dbt)
 - [Starting a dbt project](#starting-a-dbt-project)
+- [Development of dbt models](#development-of-dbt-models)
+- [Testing and documenting dbt models](#testing-and-documenting-dbt-models)
 - 
 - [Internals of BigQuery](#internals-of-bigquery)
 - [BigQuery Machine Learning](#bigquery-machine-learning)  
@@ -65,7 +67,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### Development of dbt models
+### [Development of dbt models](dev_dbt_models.md)
  * Anatomy of a dbt model: written code vs compiled Sources
  * Materialisations: table, view, incremental, ephemeral  
  * Seeds, sources and ref  
@@ -77,7 +79,9 @@ _[Back to the top](#table-of-contents)_
 
 _Note: This video is shown entirely on dbt cloud IDE but the same steps can be followed locally on the IDE of your choice_
 
-### Testing and documenting dbt models
+_[Back to the top](#table-of-contents)_
+
+### [Testing and documenting dbt models](test_doc_dbt_models.md)
  * Tests  
  * Documentation 
 

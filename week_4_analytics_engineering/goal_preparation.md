@@ -55,6 +55,8 @@ By this stage of the course you should have already:
     uris = ['gs://dtc_data_lake_substantial-mix-378619/data/yellow/yellow_tripdata_2019-*.csv.gz', 'gs://dtc_data_lake_substantial-mix-378619/data/yellow/yellow_tripdata_2020-*.csv.gz']
   );
   ```
+3. In **GCP** for ervice Account **dbt-service-account** add role `Storage Object Admin` to avoid error: "Access Denied: BigQuery BigQuery: Permission denied while globbing file pattern."
+
 _Note:_
   *  _A quick hack has been shared to load that data quicker, check instructions in [week3/extras](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_3_data_warehouse/extras)_
   * _If you recieve an error stating "Permission denied while globbing file pattern." when attemting to run fact_trips.sql this video may be helpful in resolving the issue_ 

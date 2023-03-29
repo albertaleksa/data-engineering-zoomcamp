@@ -134,43 +134,92 @@ WITH green_data AS (
 
 We will now create our first model.
 
-We will begin by creating 2 new folders under our `models` folder:
-* `staging` will have the raw models.
-* `core` will have the models that we will expose at the end to the BI tool, stakeholders, etc.
+1. We will begin by creating 2 new folders under our `models` folder:
+   * `staging` will have the raw models.
+   * `core` will have the models that we will expose at the end to the BI tool, stakeholders, etc.
 
-Under `staging` we will add 2 new files: `sgt_green_tripdata.sql` and `schema.yml`:
-```yaml
-# schema.yml
+2. Under `staging` we will add 2 new files: `sgt_green_tripdata.sql` and `schema.yml`:
+  ```yaml
+  # schema.yml
+  
+  version: 2
+  
+  sources:
+      - name: staging
+        database: your_project
+        schema: trips_data_all
+  
+        tables:
+            - name: green_tripdata
+            - name: yellow_tripdata
+  ```
+  * We define our ***sources*** in the `schema.yml` model properties file.
+  * We are defining the 2 tables for yellow and green taxi data as our sources.
+  ```sql
+  -- sgt_green_tripdata.sql
+  
+  {{ config(materialized='view') }}
+  
+  select * from {{ source('staging', 'green_tripdata') }}
+  limit 100
+  ```
+  * This query will create a ***view*** in the `staging` dataset/schema in our database.
+  * We make use of the `source()` function to access the green taxi data table, which is defined inside the `schema.yml` file.
 
-version: 2
+  The advantage of having the properties in a separate file is that we can easily modify the `schema.yml` file to change the database details and write to different databases without having to modify our `sgt_green_tripdata.sql` file.
 
-sources:
-    - name: staging
-      database: your_project
-      schema: trips_data_all
+3. **Run the model** (either locally or from dbt Cloud):
+  * Run all models:
+  ```
+  dbt run
+  ```
+  or
+  * Run specific model (or `dbt run --select <name>`):
+  ```
+  dbt run -m <model's name>
+  ```
+  i.e.:
+  ```
+  dbt run -m stg_green_tripdata
+  ```
 
-      tables:
-          - name: green_tripdata
-          - name: yellow_tripdata
-```
-* We define our ***sources*** in the `schema.yml` model properties file.
-* We are defining the 2 tables for yellow and green taxi data as our sources.
-```sql
--- sgt_green_tripdata.sql
+4. Define the fields in model `stg_green_tripdata` instead of `*`:
+  ```sql
+      -- identifiers
+      cast(vendorid as integer) as vendorid,
+      cast(ratecodeid as integer) as ratecodeid,
+      cast(pulocationid as integer) as  pickup_locationid,
+      cast(dolocationid as integer) as dropoff_locationid,
+      
+      -- timestamps
+      cast(lpep_pickup_datetime as timestamp) as pickup_datetime,
+      cast(lpep_dropoff_datetime as timestamp) as dropoff_datetime,
+      
+      -- trip info
+      store_and_fwd_flag,
+      cast(passenger_count as integer) as passenger_count,
+      cast(trip_distance as numeric) as trip_distance,
+      cast(trip_type as integer) as trip_type,
+      
+      -- payment info
+      cast(fare_amount as numeric) as fare_amount,
+      cast(extra as numeric) as extra,
+      cast(mta_tax as numeric) as mta_tax,
+      cast(tip_amount as numeric) as tip_amount,
+      cast(tolls_amount as numeric) as tolls_amount,
+      cast(ehail_fee as numeric) as ehail_fee,
+      cast(improvement_surcharge as numeric) as improvement_surcharge,
+      cast(total_amount as numeric) as total_amount,
+      cast(payment_type as integer) as payment_type,
+      cast(congestion_surcharge as numeric) as congestion_surcharge
+  ```
+5. Run model:
+  ```
+  dbt run --select stg_green_tripdata
+  ```
 
-{{ config(materialized='view') }}
 
-select * from {{ source('staging', 'green_tripdata') }}
-limit 100
-```
-* This query will create a ***view*** in the `staging` dataset/schema in our database.
-* We make use of the `source()` function to access the green taxi data table, which is defined inside the `schema.yml` file.
-
-The advantage of having the properties in a separate file is that we can easily modify the `schema.yml` file to change the database details and write to different databases without having to modify our `sgt_green_tripdata.sql` file.
-
-You may know run the model with the `dbt run` command, either locally or from dbt Cloud.
-
-## Macros
+### Macros
 
 ***Macros*** are pieces of code in Jinja that can be reused, similar to functions in other languages.
 
@@ -239,31 +288,84 @@ where vendorid is not null
 ```
 * The macro is replaced by the code contained within the macro definition as well as any variables that we may have passed to the macro parameters.
 
-## Packages
+### Create macro (in dbt Cloud):
+1. Go to `macros` folder and create file `get_payment_type_description.sql`
+2. Insert data:
+    ```sql
+    {# This macro returns the description of the payment_type #}
+    
+    {% macro get_payment_type_description(payment_type) %}
+    
+        case {{ payment_type }}
+            when 1 then 'Credit card'
+            when 2 then 'Cash'
+            when 3 then 'No charge'
+            when 4 then 'Dispute'
+            when 5 then 'Unknown'
+            when 6 then 'Voided trip'
+        end
+    
+    {% endmacro %}
+    ```
+3. Call this macro in `stg_green_tripdata.sql`:
+    ```sql
+   ...
+    cast(payment_type as integer) as payment_type,
+    {{ get_payment_type_description('payment_type') }} as payment_type_description,
+    cast(congestion_surcharge as numeric) as congestion_surcharge
+   ..
+    ```
+4. Run model again:
+  ```
+  dbt run --select stg_green_tripdata
+  ```
 
-Macros can be exported to ***packages***, similarly to how classes and functions can be exported to libraries in other languages. Packages contain standalone dbt projects with models and macros that tackle a specific problem area.
+In `target` folder are stored all compiled files.
 
-When you add a package to your project, the package's models and macros become part of your own project. A list of useful packages can be found in the [dbt package hub](https://hub.getdbt.com/).
 
-To use a package, you must first create a `packages.yml` file in the root of your work directory. Here's an example:
-```yaml
-packages:
-  - package: dbt-labs/dbt_utils
-    version: 0.8.0
-```
+### Packages
+- Like libraries in other languages
+- Standalone dbt projects with models and macros that tackle a specific problem area
+- By adding a package to your project, the package's models and macros will become part of your own project
+- To use a package, you must first create a `packages.yml` file in the root of your work directory. Here's an example:
+    ```yaml
+    packages:
+      - package: dbt-labs/dbt_utils
+        version: 0.8.0
+    ```
+  
+- Then you need to install them by running the `dbt deps` command either locally or on dbt Cloud.
+- A list of useful packages can be found in the [dbt package hub](https://hub.getdbt.com/).
+- You may access macros inside a package in a similar way to how Python access class methods:
+    ```sql
+    select
+        {{ dbt_utils.surrogate_key(['vendorid', 'lpep_pickup_datetime']) }} as tripid,
+        cast(vendorid as integer) as vendorid,
+        -- ...
+    ```
+  * The `surrogate_key()` macro generates a hashed [surrogate key](https://www.geeksforgeeks.org/surrogate-key-in-dbms/) with the specified fields in the arguments.
 
-After declaring your packages, you need to install them by running the `dbt deps` command either locally or on dbt Cloud.
+### Import package:
+1. In root dir of project create file `packages.yml`:
+    ```yaml
+    packages:
+      - package: dbt-labs/dbt_utils
+        version: 0.8.0
+    ```
+2. Run `dbt deps` to install packages
+3. Add to `stg_green_tripdata.sql` unique key using of `dbt_utils.surrogate_key`:
+    ```sql
+    select
+        -- identifiers
+        {{ dbt_utils.surrogate_key(['vendorid', 'lpep_pickup_datetime']) }} as tripid,
+        cast(vendorid as integer) as vendorid,
+    ```
+4. Run model again:
+  ```
+  dbt run --select stg_green_tripdata
+  ```
 
-You may access macros inside a package in a similar way to how Python access class methods:
-```sql
-select
-    {{ dbt_utils.surrogate_key(['vendorid', 'lpep_pickup_datetime']) }} as tripid,
-    cast(vendorid as integer) as vendorid,
-    -- ...
-```
-* The `surrogate_key()` macro generates a hashed [surrogate key](https://www.geeksforgeeks.org/surrogate-key-in-dbms/) with the specified fields in the arguments.
-
-## Variables
+### Variables
 
 Like most other programming languages, ***variables*** can be defined and used across our project.
 
@@ -289,7 +391,79 @@ Variables can be used with the `var()` macro. For example:
 * In this example, the default value for `is_test_run` is `true`; in the absence of a variable definition either on the `dbt_project.yml` file or when running the project, then `is_test_run` would be `true`.
 * Since we passed the value `false` when runnning `dbt build`, then the `if` statement would evaluate to `false` and the code within would not run.
 
-## Referencing older models in new models
+### Add variables:
+1. Add to the end of the file `stg_green_tripdata.sql`:
+    ```sql
+    where vendorid is not null 
+    -- dbt build --m <model.sql> --var 'is_test_run: false'
+    {% if var('is_test_run', default=true) %}
+    
+      limit 100
+    
+    {% endif %}
+    ```
+2. Run model (use default=true as var 'is_test_run'):
+  ```
+  dbt run --select stg_green_tripdata
+  ```
+3. Run model with var(use 'is_test_run'=false):
+  ```
+  dbt run --select stg_green_tripdata --var 'is_test_run: false'
+  ```
+
+### Add second model (stg_yellow_tripdata)
+1. Create file `stg_yellow_tripdata.sql` in `staging` folder
+2. Add:
+    ```sql
+    {{ config(materialized='view') }}
+    
+    select
+        -- identifiers
+        {{ dbt_utils.surrogate_key(['vendorid', 'lpep_pickup_datetime']) }} as tripid,
+        cast(vendorid as integer) as vendorid,
+        cast(ratecodeid as integer) as ratecodeid,
+        cast(pulocationid as integer) as  pickup_locationid,
+        cast(dolocationid as integer) as dropoff_locationid,
+        
+        -- timestamps
+        cast(tpep_pickup_datetime as timestamp) as pickup_datetime,
+        cast(tpep_dropoff_datetime as timestamp) as dropoff_datetime,
+        
+        -- trip info
+        store_and_fwd_flag,
+        cast(passenger_count as integer) as passenger_count,
+        cast(trip_distance as numeric) as trip_distance,
+        -- yellow cabs are always street-hail
+        1 as trip_type,
+        
+        -- payment info
+        cast(fare_amount as numeric) as fare_amount,
+        cast(extra as numeric) as extra,
+        cast(mta_tax as numeric) as mta_tax,
+        cast(tip_amount as numeric) as tip_amount,
+        cast(tolls_amount as numeric) as tolls_amount,
+        cast(0 as numeric) as ehail_fee,
+        cast(ehail_fee as numeric) as ehail_fee,
+        cast(improvement_surcharge as numeric) as improvement_surcharge,
+        cast(total_amount as numeric) as total_amount,
+        cast(payment_type as integer) as payment_type,
+        {{ get_payment_type_description('payment_type') }} as payment_type_description,
+        cast(congestion_surcharge as numeric) as congestion_surcharge
+    from {{source('staging', 'yellow_tripdata')}}
+    where vendorid is not null 
+    -- dbt build --m <model.sql> --var 'is_test_run: false'
+    {% if var('is_test_run', default=true) %}
+    
+      limit 100
+    
+    {% endif %}
+    ```
+3. Run models:
+    ```
+    dbt run --var 'is_test_run: false'
+    ```
+
+### Referencing older models in new models
 
 >Note: you will need the [Taxi Zone Lookup Table seed](https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv), the [staging models and schema](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_4_analytics_engineering/taxi_rides_ny/models/staging) and the [macro files](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_4_analytics_engineering/taxi_rides_ny/macros) for this section.
 

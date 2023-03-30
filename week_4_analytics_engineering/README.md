@@ -13,9 +13,9 @@
 - [Starting a dbt project](#starting-a-dbt-project)
 - [Development of dbt models](#development-of-dbt-models)
 - [Testing and documenting dbt models](#testing-and-documenting-dbt-models)
+- [Deployment of a dbt project](#deployment-of-a-dbt-project)
+- [Data visualization](#data-visualization)
 - 
-- [Internals of BigQuery](#internals-of-bigquery)
-- [BigQuery Machine Learning](#bigquery-machine-learning)  
 - [Deploying ML model](#deploying-ml-model)
 - [Homework](#homework)
 - [Community notes](#community-notes)
@@ -89,26 +89,29 @@ _[Back to the top](#table-of-contents)_
 
 _Note: This video is shown entirely on dbt cloud IDE but the same steps can be followed locally on the IDE of your choice_
 
-### Deploying a dbt project
-#### Alternative a: Using BigQuery + dbt cloud
- * Deployment: development environment vs production 
- * dbt cloud: scheduler, sources and hosted documentation
+_[Back to the top](#table-of-contents)_
 
- :movie_camera: [Video](https://www.youtube.com/watch?v=rjf6yZNGX8I&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=38)
+### [Deployment of a dbt project](dbt_deployment.md)
+- #### Alternative a: Using BigQuery + dbt cloud
+  * Deployment: development environment vs production 
+  * dbt cloud: scheduler, sources and hosted documentation
+
+  :movie_camera: [Video](https://www.youtube.com/watch?v=rjf6yZNGX8I&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=38)
   
-#### Alternative b: Using Postgres + dbt core (locally)
- * Deployment: development environment vs production 
- * dbt cloud: scheduler, sources and hosted documentation
+- #### Alternative b: Using Postgres + dbt core (locally)
+  * Deployment: development environment vs production 
+  * dbt cloud: scheduler, sources and hosted documentation
 
- :movie_camera: [Video](https://www.youtube.com/watch?v=Cs9Od1pcrzM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=39)
+  :movie_camera: [Video](https://www.youtube.com/watch?v=Cs9Od1pcrzM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=39)
 
-### Visualising the transformed data
- * Google data studio 
- * [Metabase (local installation)](https://www.metabase.com/)
+_[Back to the top](#table-of-contents)_
 
- :movie_camera: [Google data studio Video](https://www.youtube.com/watch?v=39nLTs74A3E&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=42) 
- 
- :movie_camera: [Metabase Video](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=43) 
+### Data visualization
+- #### [Google Data Studio](google_data_studio.md)
+  :movie_camera: [Video](https://www.youtube.com/watch?v=39nLTs74A3E&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=42) 
+- #### [Metabase (local installation)](metabase.md)
+(https://www.metabase.com/)
+  :movie_camera: [Video](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=43) 
 
  
 ### Advanced knowledge:

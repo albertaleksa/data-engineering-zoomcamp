@@ -1,16 +1,16 @@
 >[Back to Week Menu](README.md)
 >
->Previous Theme: [Testing and documenting dbt models](test_doc_dbt_models.md)
+>Previous Theme: [Deployment of a dbt project](dbt_deployment.md)
 >
 >Next Theme: 
 
-# Data visualization
+## Data visualization
 
 After creating our models, transforming the data and deploying the models, we will now ***visualize*** the data.
 
-## Google Data Studio
+### Google Data Studio
 
-_[Video source](https://www.youtube.com/watch?v=39nLTs74A3E&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=42)_
+_Video sources: [1](https://www.youtube.com/watch?v=39nLTs74A3E&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=42)_, [2](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=43)
 
 [Google Data Studio](https://datastudio.google.com/) (GDS) is an online tool for converting data into ***reports*** and ***dashboards***.
 
@@ -73,7 +73,9 @@ _[Video source](https://www.youtube.com/watch?v=39nLTs74A3E&list=PL3MmuxUbc_hJed
 
 You may click on the _View_ button at the top to check how the shared report will look to the stakeholders. Sharing the report works similarly to Google Drive document sharing.
 
-## Metabase
+_[Back to the top](#data-visualization)_
+
+### Metabase
 
 GDS cannot be used for local databases. If you're developing locally, you may use the [Open Source Edition](https://www.metabase.com/start/oss/) of [Metabase](https://www.metabase.com/).
 
@@ -88,19 +90,4 @@ Once the 3 components have been defined, a preview will be shown. Once you're re
 
 Questions can be saved in _collections_ and displayed in _dashboards_.
 
-_[Back to the top](#)_
-
->Previous: [Data Warehouse](3_data_warehouse.md)
-
->[Back to index](README.md)
-
->Next: [Batch Processing](5_batch_processing.md)
-
->>Extra: [Preparing Data for Spark](extra1_preparing_data.md)
-
-
-
-
-![Architecture of Dimensional Modeling](../images/04_arch.png)
-
-_[Back to the top](#introduction-to-analytics-engineering)_
+_[Back to the top](#data-visualization)_

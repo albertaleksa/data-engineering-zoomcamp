@@ -15,19 +15,14 @@
 - [Testing and documenting dbt models](#testing-and-documenting-dbt-models)
 - [Deployment of a dbt project](#deployment-of-a-dbt-project)
 - [Data visualization](#data-visualization)
-- 
-- [Deploying ML model](#deploying-ml-model)
+- [Advanced knowledge](#advanced-knowledge-)
 - [Homework](#homework)
+- [Workshop: Maximizing Confidence in Your Data Model Changes with dbt and PipeRider](#workshop--maximizing-confidence-in-your-data-model-changes-with-dbt-and-piperider)
 - [Community notes](#community-notes)
+- [Useful links](#useful-links)
 
 
 - [Slides](https://docs.google.com/presentation/d/1xSll_jv0T8JF4rYZvLHfkJXYqUjPtThA/edit?usp=sharing&ouid=114544032874539580154&rtpof=true&sd=true) 
-- 
-- [Big Query basic SQL](big_query.sql)
-- [SQL for ML in BigQuery](big_query_ml.sql)
-
-
-
 
 _[Back to the top](#table-of-contents)_
 
@@ -106,13 +101,15 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### Data visualization
-- #### [Google Data Studio](google_data_studio.md)
+### [Data visualization](data_visualization.md)
+- #### Google Data Studio
+
   :movie_camera: [Video](https://www.youtube.com/watch?v=39nLTs74A3E&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=42) 
-- #### [Metabase (local installation)](metabase.md)
-(https://www.metabase.com/)
+- #### Metabase (local installation)
+
   :movie_camera: [Video](https://www.youtube.com/watch?v=BnLkrA7a6gM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=43) 
 
+_[Back to the top](#table-of-contents)_
  
 ### Advanced knowledge:
  * [Make a model Incremental](https://docs.getdbt.com/docs/building-a-dbt-project/building-models/configuring-incremental-models)
@@ -123,6 +120,11 @@ _[Back to the top](#table-of-contents)_
  * [Exposure](https://docs.getdbt.com/docs/building-a-dbt-project/exposures)
  * [Metrics](https://docs.getdbt.com/docs/building-a-dbt-project/metrics)
 
+_[Back to the top](#table-of-contents)_
+
+### [Homework](../cohorts/2023/week_4_analytics_engineering/homework.md)
+
+_[Back to the top](#table-of-contents)_
 
 ## Workshop: Maximizing Confidence in Your Data Model Changes with dbt and PipeRider
 
@@ -130,6 +132,7 @@ To learn how to use PipeRider together with dbt for detecting changes in model a
 
 [More details](../cohorts/2023/workshops/piperider.md)
 
+_[Back to the top](#table-of-contents)_
 
 ## Community notes
 
@@ -152,3 +155,5 @@ Did you take notes? You can share them here.
 ## Useful links
 
 - [Visualizing data with Metabase course](https://www.metabase.com/learn/visualization/)
+
+_[Back to the top](#table-of-contents)_

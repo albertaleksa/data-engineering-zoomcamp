@@ -2,7 +2,7 @@
 >
 >Previous Theme: [Testing and documenting dbt models](test_doc_dbt_models.md)
 >
->Next Theme: [Google Data Studio](google_data_studio.md)
+>Next Theme: [Data visualization](data_visualization.md)
 
 ## Deployment of a dbt project
 

@@ -27,7 +27,7 @@
 
 [**Week 4: Analytics Engineering**](week_4_analytics_engineering/)
 
-* [Homework](week_4_analytics_engineering/homework.md)
+* [Homework](week_4_analytics_engineering/homework.md) and [My Solution](week_4_analytics_engineering/homework_my_solutions.md)
 * [PipeRider + dbt Workshop](workshops/piperider.md)
 * [Office hours](https://www.youtube.com/watch?v=ODYg_r72qaE&list=PL3MmuxUbc_hJjEePXIdE-LVUx_1ZZjYGW&index=11)
 

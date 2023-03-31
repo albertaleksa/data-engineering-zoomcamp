@@ -161,7 +161,7 @@ models:
   ```
   dbt build
   ```
-7. Create file `schema.yml` in folder `models/core/` with tests and documentation for other models ([schema.yml](/models/core/schema.yml)).
+7. Create file `schema.yml` in folder `models/core/` with tests and documentation for other models ([schema.yml](taxi_rides_ny/models/core/schema.yml)).
 8. Also, you can document `macros` and `seeds`.
 9. Build:
   ```

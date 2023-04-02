@@ -16,3 +16,12 @@
 
 /week_1_basics_n_setup/docker_sql/*.csv
 /week_1_basics_n_setup/docker_sql/tst
+
+/cohorts/2023/week_2_workflow_orchestration/el_parent_flow-deployment.yaml
+/cohorts/2023/week_2_workflow_orchestration/etl_parent_flow-deployment.yaml
+/cohorts/2023/week_3_data_warehouse/etl_parent_flow-deployment.yaml
+/week_2_workflow_orchestration/etl_parent_flow-deployment.yaml
+/etl_parent_flow-deployment.yaml
+
+/week_2_workflow_orchestration/flows/01_start/yellow_tripdata_2021-01.csv.gz
+

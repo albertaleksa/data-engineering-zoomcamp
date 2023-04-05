@@ -34,11 +34,9 @@ There are many Pandas-like operations that we can do on Spark dataframes, such a
     ```
 * And many more. The official Spark documentation website contains a [quick guide for dataframes](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html).
 
-_[Back to the top](#)_
+_[Back to the top](#spark-dataframes)_
 
-## Actions vs Transformations
-
-_[Video source](https://www.youtube.com/watch?v=ti3aC1m3rE8&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=51)_
+### Actions vs Transformations
 
 Some Spark methods are "lazy", meaning that they are not executed right away. You can test this with the last instructions we run in the previous section: after running them, the Spark UI will not show any new jobs. However, running `df.show()` right after will execute right away and display the contents of the dataframe; the Spark UI will also show a new job.
 
@@ -69,11 +67,9 @@ List of actions (eager):
 * Write, read
 * ...
 
-_[Back to the top](#)_
+_[Back to the top](#spark-dataframes)_
 
-## Functions and User Defined Functions (UDFs)
-
-_[Video source](https://www.youtube.com/watch?v=ti3aC1m3rE8&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=51)_
+### Functions and User Defined Functions (UDFs)
 
 Besides the SQL and Pandas-like commands we've seen so far, Spark provides additional built-in functions that allow for more complex data manipulation. By convention, these functions are imported as follows:
 

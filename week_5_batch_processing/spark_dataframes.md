@@ -2,7 +2,7 @@
 >
 >Previous Theme: [First Look at Spark/PySpark](spark_first_look.md)
 >
->Next Theme: 
+>Next Theme: [(Optional) Preparing Yellow and Green Taxi Data](preparing_data.md)
 
 ## Spark Dataframes
 _[Video source](https://youtu.be/ti3aC1m3rE8?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_

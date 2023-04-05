@@ -69,7 +69,7 @@ _[Back to the top](#table-of-contents)_
 
     :movie_camera: [Video](https://youtu.be/ti3aC1m3rE8?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-- #### (Optional) Preparing Yellow and Green Taxi Data
+- #### [(Optional) Preparing Yellow and Green Taxi Data](preparing_data.md)
 
     Script to prepare the Dataset [download_data.sh](code/download_data.sh)
     

@@ -2,7 +2,7 @@
 >
 >Previous Theme: [Spark Dataframes](spark_dataframes.md)
 >
->Next Theme: 
+>Next Theme: [SQL with Spark](spark_sql.md)
 
 ## (Optional) Preparing Yellow and Green Taxi Data
 _[Video source](https://youtu.be/CI3P4tAtru4?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_

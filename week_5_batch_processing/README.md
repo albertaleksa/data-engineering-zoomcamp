@@ -77,7 +77,7 @@ _[Back to the top](#table-of-contents)_
 
     :movie_camera: [Video](https://youtu.be/CI3P4tAtru4?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 
-- #### SQL with Spark
+- #### [SQL with Spark](spark_sql.md)
 
     :movie_camera: [Video](https://www.youtube.com/watch?v=uAlp2VuZZPY&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
 

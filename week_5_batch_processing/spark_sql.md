@@ -2,7 +2,7 @@
 >
 >Previous Theme: [(Optional) Preparing Yellow and Green Taxi Data](preparing_data.md)
 >
->Next Theme: 
+>Next Theme: [Spark Internals](spark_internals.md)
 
 ## SQL with Spark
 _[Video source](https://www.youtube.com/watch?v=uAlp2VuZZPY&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_

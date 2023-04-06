@@ -11,6 +11,8 @@
 - [Introduction to Batch Processing](#introduction-to-batch-processing)
 - [Introduction to Spark](#introduction-to-spark)
 - [Installing Spark](#installing-spark)
+- [Spark SQL and DataFrames](#spark-sql-and-dataframes)
+- [Spark Internals](#spark-internals)
 - 
 - [Development of dbt models](#development-of-dbt-models)
 - [Testing and documenting dbt models](#testing-and-documenting-dbt-models)
@@ -84,7 +86,7 @@ _[Back to the top](#table-of-contents)_
 _[Back to the top](#table-of-contents)_
 
 
-### [Spark Internals]()
+### [Spark Internals](spark_internals.md)
 - #### Anatomy of a Spark Cluster
 
     :movie_camera: [Video](https://youtu.be/68CipcZt7ZA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)

@@ -101,7 +101,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [(Optional) Resilient Distributed Datasets]()
+### [Resilient Distributed Datasets](rdd.md)
 - #### Operations on Spark RDDs
 
     :movie_camera: [Video](https://youtu.be/Bdu-xIrF3OM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)

@@ -2,7 +2,7 @@
 >
 >Previous Theme: [SQL with Spark](spark_sql.md)
 >
->Next Theme: 
+>Next Theme: [(Optional) Resilient Distributed Datasets](rdd.md)
 
 ## Spark Internals
 _Video sources: [1](https://youtu.be/68CipcZt7ZA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_, [2](https://youtu.be/9qrDsY_2COo&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), [3](https://youtu.be/lu7TrqAWuH4&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
@@ -12,7 +12,7 @@ _Video sources: [1](https://youtu.be/68CipcZt7ZA&list=PL3MmuxUbc_hJed7dXYoJw8DoC
 
 _[Video source](https://youtu.be/68CipcZt7ZA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_
 
-Until now, we've used a ***local cluster*** to run our Spark code, but Spark clusters often contain multiple computers that behace as executors.
+Until now, we've used a ***local cluster*** to run our Spark code, but Spark clusters often contain multiple computers that behave as executors.
 
 Spark clusters are managed by a ***master***, which behaves similarly to an entry point of a Kubernetes cluster. A ***driver*** (an Airflow DAG, a computer running a local script, etc.) that wants to execute a Spark job will send the job to the master, which in turn will divide the work among the cluster's executors. If any executor fails and becomes offline for any reason, the master will reassign the task to another executor.
 
@@ -40,11 +40,28 @@ Each executor will fetch a ***dataframe partition*** stored in a ***Data Lake***
 
 This is in contrast to [Hadoop](https://hadoop.apache.org/), another data analytics engine, whose executors locally store the data they process. Partitions in Hadoop are duplicated across several executors for redundancy, in case an executor fails for whatever reason (Hadoop is meant for clusters made of commodity hardware computers). However, data locality has become less important as storage and data transfer costs have dramatically decreased and nowadays it's feasible to separate storage from computation, so Hadoop has fallen out of fashion.
 
-_[Back to the top](#)_
+_[Back to the top](#spark-internals)_
 
-## GROUP BY in Spark
+### GROUP BY in Spark
 
 _[Video source](https://www.youtube.com/watch?v=9qrDsY_2COo&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=55)_
+
+#### Preparation in Jupyter Notebook:
+```python
+import pyspark
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder \
+    .master("local[*]") \
+    .appName('test') \
+    .getOrCreate()
+
+df_green = spark.read.parquet('data/pq/green/*/*')
+
+df_green.registerTempTable('green')
+```
+
+#### GROUP BY query
 
 Let's do the following query:
 
@@ -63,6 +80,11 @@ WHERE
 GROUP BY
     1, 2  
 """)
+```
+
+#### Save:
+```python
+df_green_revenue.write.parquet('data/report/revenue/green', mode='overwrite')
 ```
 
 This query will output the total revenue and amount of trips per hour per zone. We need to group by hour and zones in order to do this.
@@ -161,12 +183,46 @@ flowchart LR
     t5-->t6
 ```
 
-By default, Spark will repartition the dataframe to 200 partitions after shuffling data. For the kind of data we're dealing with in this example this could be counterproductive because of the small size of each partition/file, but for larger datasets this is fine.
+#### The same for the yellow data:
+```python
+df_yellow = spark.read.parquet('data/pq/yellow/*/*')
+df_yellow.registerTempTable('yellow')
+
+df_yellow_revenue = spark.sql("""
+SELECT 
+    date_trunc('hour', tpep_pickup_datetime) AS hour, 
+    PULocationID AS zone,
+
+    SUM(total_amount) AS amount,
+    COUNT(*) AS number_records
+FROM
+    yellow
+WHERE
+    tpep_pickup_datetime >= '2020-01-01 00:00:00'
+GROUP BY
+    1, 2 
+""")
+
+df_yellow_revenue.write.parquet('data/report/revenue/yellow', mode='overwrite')
+```
+
+By default, Spark will repartition the dataframe to 200 partitions (but I had only 4) after shuffling data. For the kind of data we're dealing with in this example this could be counterproductive because of the small size of each partition/file, but for larger datasets this is fine.
 
 Shuffling is an ***expensive operation***, so it's in our best interest to reduce the amount of data to shuffle when querying.
 * Keep in mind that repartitioning also involves shuffling data.
 
-_[Back to the top](#)_
+#### Repartition green and yellow data to have 20 partitions:
+```python
+df_green_revenue \
+    .repartition(20) \
+    .write.parquet('data/report/revenue/green', mode='overwrite')
+
+df_yellow_revenue \
+    .repartition(20) \
+    .write.parquet('data/report/revenue/yellow', mode='overwrite')
+```
+
+_[Back to the top](#spark-internals)_
 
 ## Joins in Spark
 
@@ -196,6 +252,11 @@ df_join = df_green_revenue_tmp.join(df_yellow_revenue_tmp, on=['hour', 'zone'], 
 ```
 * `on=` receives a list of columns by which we will join the tables. This will result in a ***primary composite key*** for the resulting table.
 * `how=` specifies the type of `JOIN` to execute.
+
+#### Save:
+```python
+df_join.write.parquet('data/report/revenue/total')
+```
 
 When we run either `show()` or `write()` on this query, Spark will have to create both the temporary dataframes and the joint final dataframe. The DAG will look like this:
 
@@ -256,7 +317,27 @@ graph LR
 
 ### Joining a large table and a small table
 
->Note: this section assumes that you have run the code in [the test Jupyter Notebook](../5_batch_processing/03_test.ipynb) from the [Installing spark section](#installing-spark) and therefore have created a `zones` dataframe.
+>Note: this section assumes that you have run the code in [the test Jupyter Notebook](code/03_test.ipynb) from the [Installing spark section](spark_install.md) and therefore have created a `zones` dataframe.
+
+Instead of computing every time on the fly 'revenue results' we can use materialized results from parquet files (that we saved previously):
+```python
+df_green_revenue = spark.read.parquet('data/report/revenue/green/')
+df_yellow_revenue = spark.read.parquet('data/report/revenue/yellow/')
+
+df_green_revenue_tmp = df_green_revenue \
+    .withColumnRenamed('amount', 'green_amount') \
+    .withColumnRenamed('number_records', 'green_number_records')
+
+df_yellow_revenue_tmp = df_yellow_revenue \
+    .withColumnRenamed('amount', 'yellow_amount') \
+    .withColumnRenamed('number_records', 'yellow_number_records')
+
+df_join = df_green_revenue_tmp.join(df_yellow_revenue_tmp, on=['hour', 'zone'], how='outer')
+
+df_join.write.parquet('data/report/revenue/total', mode='overwrite')
+
+df_join = spark.read.parquet('data/report/revenue/total')
+```
 
 Let's now use the `zones` lookup table to match each zone ID to its corresponding name.
 
@@ -307,7 +388,5 @@ graph LR
 ```
 
 Shuffling isn't needed because each executor already has all of the necessary info to perform the join on each partition, thus speeding up the join operation by orders of magnitude.
-
-_[Back to the top](#)_
 
 _[Back to the top](#spark-internals)_

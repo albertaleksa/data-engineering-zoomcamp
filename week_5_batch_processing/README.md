@@ -112,7 +112,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Running Spark in the Cloud]()
+### [Running Spark in the Cloud](spark_in_cloud.md)
 - #### Connecting to Google Cloud Storage
 
     :movie_camera: [Video](https://youtu.be/Yyz293hBVcQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)

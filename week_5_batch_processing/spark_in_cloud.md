@@ -7,6 +7,8 @@
 # Running Spark in the Cloud
 _Video sources: [1](https://youtu.be/Yyz293hBVcQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), [2](https://youtu.be/HXBwSlXo5IA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQ), [3](https://youtu.be/osAiAYahvh8&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), [4](https://youtu.be/HIm2BOj8C0Q&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_
 
+_[Commands](code/cloud.md)_
+
 So far we've seen how to run Spark locally and how to work with local data. In this section we will cover how to use Spark with remote data and run Spark in the cloud as well.
 
 ## Connecting to Google Cloud Storage
@@ -394,7 +396,38 @@ _[Back to the top](#running-spark-in-the-cloud)_
 
 ## Connecting Spark to BigQuery
 
+_[Commands](code/cloud.md)_
 
+Write results to big query ([docs](https://cloud.google.com/dataproc/docs/tutorials/bigquery-connector-spark-example#pyspark))
 
+1. Copy `06_spark_sql.py` to `06_spark_sql_big_query.py`.
+2. Change saving DataFrame from parquet files to BigQuery:
+   ```
+   # Saving the data to BigQuery
+   df_result.write.format('bigquery') \
+       .option('table', output) \
+       .save()
+   ```
+3. Add to script to use the Cloud Storage bucket for temporary BigQuery export data used by the connector. When Dataproc was created the temp bucket was created. We use it:
+   ```python
+   spark.conf.set('temporaryGcsBucket', 'dataproc-temp-us-east1-1092502114651-vyi6r0sc')
+   ```
+4. Upload python script to Google Cloud Storage:
+   ```
+   $ gsutil cp 06_spark_sql_big_query.py gs://dtc_data_lake_substantial-mix-378619/code/06_spark_sql_big_query.py
+   ```
+5. Submit Dataproc job:
+   ```bash
+   gcloud dataproc jobs submit pyspark \
+       --cluster=de-zoomcamp-cluster \
+       --region=us-east1 \
+       --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar \
+       gs://dtc_data_lake_substantial-mix-378619/code/06_spark_sql_big_query.py \
+       -- \
+           --input_green=gs://dtc_data_lake_substantial-mix-378619/pq/green/2020/*/ \
+           --input_yellow=gs://dtc_data_lake_substantial-mix-378619/pq/yellow/2020/*/ \
+           --output=trips_data_all.reports-2020
+   ```
+6. Then Spark creates a table `trips_data_all.reports-2020` in Big Query and put information there. 
 
 _[Back to the top](#running-spark-in-the-cloud)_

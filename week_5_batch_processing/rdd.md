@@ -2,10 +2,10 @@
 >
 >Previous Theme: [Spark Internals](spark_internals.md)
 >
->Next Theme: 
+>Next Theme: [Running Spark in the Cloud](spark_in_cloud.md)
 
 # Resilient Distributed Datasets (RDDs)
-_Video sources: [1](https://youtu.be/Bdu-xIrF3OM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_, [2](https://youtu.be/k3uB2K99roI&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+_Video sources: [1](https://youtu.be/Bdu-xIrF3OM&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), [2](https://youtu.be/k3uB2K99roI&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_
 
 
 ## RDDs: Map and Reduce

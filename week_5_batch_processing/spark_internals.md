@@ -2,10 +2,10 @@
 >
 >Previous Theme: [SQL with Spark](spark_sql.md)
 >
->Next Theme: [(Optional) Resilient Distributed Datasets](rdd.md)
+>Next Theme: [Resilient Distributed Datasets](rdd.md)
 
 ## Spark Internals
-_Video sources: [1](https://youtu.be/68CipcZt7ZA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_, [2](https://youtu.be/9qrDsY_2COo&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), [3](https://youtu.be/lu7TrqAWuH4&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+_Video sources: [1](https://youtu.be/68CipcZt7ZA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), [2](https://youtu.be/9qrDsY_2COo&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), [3](https://youtu.be/lu7TrqAWuH4&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)_
 
 
 ### Spark Cluster

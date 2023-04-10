@@ -13,12 +13,9 @@
 - [Installing Spark](#installing-spark)
 - [Spark SQL and DataFrames](#spark-sql-and-dataframes)
 - [Spark Internals](#spark-internals)
+- [Resilient Distributed Datasets](#resilient-distributed-datasets)
+- [Running Spark in the Cloud](#running-spark-in-the-cloud)
 - 
-- [Development of dbt models](#development-of-dbt-models)
-- [Testing and documenting dbt models](#testing-and-documenting-dbt-models)
-- [Deployment of a dbt project](#deployment-of-a-dbt-project)
-- [Data visualization](#data-visualization)
-- [Advanced knowledge](#advanced-knowledge-)
 - [Homework](#homework)
 - [Workshop: Maximizing Confidence in Your Data Model Changes with dbt and PipeRider](#workshop--maximizing-confidence-in-your-data-model-changes-with-dbt-and-piperider)
 - [Community notes](#community-notes)
@@ -112,7 +109,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Running Spark in the Cloud]()
+### [Running Spark in the Cloud](spark_in_cloud.md)
 - #### Connecting to Google Cloud Storage
 
     :movie_camera: [Video](https://youtu.be/Yyz293hBVcQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)

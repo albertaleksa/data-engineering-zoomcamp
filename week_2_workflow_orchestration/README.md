@@ -21,6 +21,8 @@
 - [Community notes](#community-notes)
 - [2022 notes](#2022-notes)
 
+---
+
 ### [Data Lake (GCS)](data_lake.md)
 
 * [Slides](https://docs.google.com/presentation/d/1RkH-YhBz2apIjYZAxUz2Uks4Pt51-fVWVN9CcH9ckyY/edit?usp=sharing)

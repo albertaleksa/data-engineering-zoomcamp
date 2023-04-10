@@ -26,6 +26,8 @@
 
 _[Back to the top](#table-of-contents)_
 
+---
+
 ### [Introduction to Analytics Engineering](intro_analytics_engineering.md)
 - What is analytics engineering?
 - ETL vs ELT 
@@ -122,7 +124,10 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Homework](../cohorts/2023/week_4_analytics_engineering/homework.md)
+### Homework 
+Homework can be found [here](../cohorts/2023/week_4_analytics_engineering/homework.md).
+
+Solution for homework [here](../cohorts/2023/week_4_analytics_engineering/homework_my_solutions.md).
 
 _[Back to the top](#table-of-contents)_
 

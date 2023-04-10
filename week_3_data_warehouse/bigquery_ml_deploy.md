@@ -2,7 +2,7 @@
 >
 >Previous Theme: [BigQuery Machine Learning](bigquery_ml.md) 
 >
->Next Theme: 
+> [Homework](../cohorts/2023/week_3_data_warehouse/homework.md)
 
 ## BigQuery ML deployment
 

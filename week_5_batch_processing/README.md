@@ -15,19 +15,12 @@
 - [Spark Internals](#spark-internals)
 - [Resilient Distributed Datasets](#resilient-distributed-datasets)
 - [Running Spark in the Cloud](#running-spark-in-the-cloud)
-- 
 - [Homework](#homework)
-- [Workshop: Maximizing Confidence in Your Data Model Changes with dbt and PipeRider](#workshop--maximizing-confidence-in-your-data-model-changes-with-dbt-and-piperider)
 - [Community notes](#community-notes)
-- [Useful links](#useful-links)
-
-
-- [Slides](https://docs.google.com/presentation/d/1xSll_jv0T8JF4rYZvLHfkJXYqUjPtThA/edit?usp=sharing&ouid=114544032874539580154&rtpof=true&sd=true) 
 
 _[Back to the top](#table-of-contents)_
 
-
-----------------------
+---
 
 ### [Introduction to Batch Processing](intro_batch_processing.md)
 - Batch vs Streaming
@@ -128,7 +121,10 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Homework](../cohorts/2023/week_5_batch_processing/homework.md)
+### Homework 
+Homework can be found [here](../cohorts/2023/week_5_batch_processing/homework.md).
+
+Solution for homework [here](../cohorts/2023/week_5_batch_processing/homework_my_solutions.md).
 
 _[Back to the top](#table-of-contents)_
 

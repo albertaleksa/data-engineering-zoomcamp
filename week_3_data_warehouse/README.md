@@ -22,6 +22,7 @@
 - [Big Query basic SQL](big_query.sql)
 - [SQL for ML in BigQuery](big_query_ml.sql)
 
+---
 
 ### [Data Warehouse](dw_bigquery.md)
 
@@ -72,7 +73,10 @@ _[Back to the top](#table-of-contents)_
 
 - [Steps to extract and deploy model with docker](extract_model.md)  
 
-### [Homework](../cohorts/2023/week_3_data_warehouse/homework.md)
+### Homework 
+Homework can be found [here](../cohorts/2023/week_3_data_warehouse/homework.md).
+
+Solution for homework [here](../cohorts/2023/week_3_data_warehouse/homework_my_solutions.md).
 
 _[Back to the top](#table-of-contents)_
 

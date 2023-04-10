@@ -2,7 +2,7 @@
 >
 >Previous Theme: [Deployment of a dbt project](dbt_deployment.md)
 >
->Next Theme: 
+> [Homework](../cohorts/2023/week_4_analytics_engineering/homework.md)
 
 ## Data visualization
 

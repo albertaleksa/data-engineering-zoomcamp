@@ -10,6 +10,7 @@ In this homework we'll put what we learned about Spark in practice.
 
 For this homework we will be using the FHVHV 2021-06 data found here. [FHVHV Data](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhvhv/fhvhv_tripdata_2021-06.csv.gz )
 
+All solutions in [Jupyter Notebook](../../../week_5_batch_processing/code/Homework.ipynb)
 
 ### Question 1: 
 
@@ -240,15 +241,52 @@ Using the zone lookup data and the fhvhv June 2021 data, what is the name of the
 - East Chelsea
 - Astoria
 - Union Sq
-- Crown Heights North
+* - Crown Heights North
 </br></br>
 
 ### Solution:
   ```
-
+  df_zones = spark.read.parquet('zones/')
+  
+  df \
+      .join(df_zones, df.PULocationID == df_zones.LocationID) \
+      .groupBy(df_zones.LocationID, df_zones.Zone) \
+      .count() \
+      .orderBy(F.col('count').desc()) \
+      .limit(5) \
+      .show()
+  ```
+  or using SQL:
+  ```
+  spark.sql("""
+  SELECT
+      zones.Zone,
+      COUNT(*) AS cnt
+  FROM
+      fhvhv_2021_06
+  INNER JOIN zones
+          ON fhvhv_2021_06.PULocationID = zones.LocationID
+  GROUP BY
+      fhvhv_2021_06.PULocationID, zones.Zone
+  ORDER BY
+      cnt DESC
+  LIMIT
+      10
+  ;
+  """).show()
   ```
 ### Result:
-
+  ```
+  +----------+-------------------+------+
+  |LocationID|               Zone| count|
+  +----------+-------------------+------+
+  |        61|Crown Heights North|231279|
+  |        79|       East Village|221244|
+  |       132|        JFK Airport|188867|
+  |        37|     Bushwick South|187929|
+  |        76|      East New York|186780|
+  +----------+-------------------+------+
+  ```
 
 
 ## Submitting the solutions

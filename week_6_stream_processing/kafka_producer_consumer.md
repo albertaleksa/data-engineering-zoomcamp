@@ -12,45 +12,37 @@ _[Video source](https://www.youtube.com/watch?v=aegTuyxX7Yg)_
 
 ### What we will cover
 
-> 0:00/21:02 (6.5) What we will cover
-
 We will cover :
 
-- Produce some messages programmaticaly
-- Consume some data programmaticaly
+- Produce some messages programmatically
+- Consume some data programmatically
 
 We will use Java for this. If we want to use Python, there’s a Docker image to help us.
 
 ### Create a topic with Confluent cloud
 
-> 1:07/21:02 (6.5) Create a topic with Confluent cloud
+- Login to [Confluent Cloud](https://confluent.cloud/).
 
-Login to [Confluent Cloud](https://confluent.cloud/).
-
-From the **Welcome back** page, click on **Environments**, select the **Default cluster**, click on
+- From the **Welcome back** page, click on **Environments**, select the **Default cluster**, click on
 **kafka_tutorial_cluster** and select **Topics** in the left menu.
 
-Click on **Add topic** button.
-
-In the **New topic form**, enter :
-
-- **Topic name** : rides
-- **Partitions** : 2
-- Click on **Show advanced settings**
-- **Retention time**: 1 day
-
-Click on **Save & create** button.
+- Click on **Add topic** button.
+   > **Topic name**: rides
+   > 
+   > **Partitions**: 2
+   > 
+   > Click on **Show advanced settings**:
+   > 
+   > > **Retention time**: 1 day
+   > 
+   > Save and create
+- Click on **Save & create** button.
 
 This topic has no messages, schema or configuration.
 
 ### Create a client
-
-> 1:59/21:02 (6.5) Create a client
-
-Select **Clients** on the left menu, click on **New client** button, and choose **Java** as language. This provides
+- Select **Clients** on the left menu, click on **New client** button, and choose **Java** as language. This provides
 snippet code to configure our client.
-
-![w6s16](dtc/w6s16.png)
 
 Here the snippet code created.
 
@@ -79,16 +71,12 @@ basic.auth.user.info={{ SR_API_KEY }}:{{ SR_API_SECRET }}
 
 ### Java class
 
-> 2:29/21:02 (6.5) Java class
-
-Start your Java IDE (I use IntelliJ IDEA) et open `week_6_stream_processing/java/kafka_examples` directory from a cloned
+Start your Java IDE (I use Visual Studio Code) to open `week_6_stream_processing/java/kafka_examples` directory from a cloned
 repo on your disk of [data-engineering-zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp).
-
-![w6s15](dtc/w6s15.png)
 
 A Java class `Ride` has been created with the same structure as the taxi trip files in New York City.
 
-The `JsonProducer` class contains de `getRides()` method that reads a CSV file and return a list of `Ride`.
+The `JsonProducer` class contains the `getRides()` method that reads a CSV file and return a list of `Ride`.
 
 **File `JsonProducer.java`**
 
@@ -123,8 +111,6 @@ public static void main(String[] args) throws IOException, CsvException,
 
 ### Create Properties
 
-> 3:51/21:02 (6.5) Create Properties
-
 We have to create properties using the snippet code obtained previously.
 
 **File `JsonProducer.java`**
@@ -156,7 +142,7 @@ as environment variables and use [System.getenv()](https://docs.oracle.com/en/ja
 
 In your IDE, place these confidential variables in environment variables field.
 
-<img src="dtc/w6s21.png" width="700">
+![w6s21](../images/w6s21.png)
 
 Then you can import these variables into your code at runtime like this:
 
@@ -190,8 +176,6 @@ Serializer](https://docs.confluent.io/platform/current/schema-registry/serdes-de
 
 ### Create `publishRides()` method
 
-> 5:30/21:02 (6.5) Create publishRides() method
-
 Now create the `publishRides()` method.
 
 **File `JsonProducer.java`**
@@ -220,8 +204,6 @@ Now create the `publishRides()` method.
 is a Kafka client that publishes records to the Kafka cluster.
 
 ### `build.gradle` file
-
-> 8:36/21:02 (6.5) `build.gradle` file
 
 We need to add implementations in the dependencies of `build.gradle` file.
 
@@ -267,8 +249,6 @@ test {
 
 ### Run `JsonProducer`
 
-> 9:20/21:02 (6.5) Run JsonProducer
-
 Now, let’s run `JsonProducer`.
 
 If all goes well, you should see messages appear in the log of the Java IDE and also under **Messages** tab of the topic
@@ -276,21 +256,17 @@ If all goes well, you should see messages appear in the log of the Java IDE and 
 
 <table>
 <tr><td>
-<img src="dtc/w6s17.png">
+<img src="../images/w6s17.png">
 </td><td>
-<img src="dtc/w6s18.png">
+<img src="../images/w6s18.png">
 </td></tr>
 </table>
 
 ### Create `JsonConsumer` class
 
-> 9:50/21:02 (6.5) Create JsonConsumer class
-
 Now, for the consumer, we’re going to do basically the same thing as before with the producer.
 
 ### Create `Properties` for Consumer
-
-> 3:51/21:02 (6.5) Create Properties for Consumer
 
 We have to create properties using the snippet code obtained previously.
 
@@ -330,9 +306,7 @@ is a client that consumes records from a Kafka cluster.
 
 ### Create `consumeFromKafka()` method
 
-> 11:30/21:02 (6.5) Create `consumeFromKafka()` method
-
-Let’s ceate the `consumeFromKafka()` method.
+Let’s create the `consumeFromKafka()` method.
 
 **File `JsonConsumer.java`**
 
@@ -353,8 +327,6 @@ public void consumeFromKafka() {
 }
 ```
 
-> 13:35/21:02 (6.5) Create `main()` method
-
 Finally, we create the `main()` method
 
 **File `JsonConsumer.java`**
@@ -368,10 +340,7 @@ public static void main(String[] args) {
 
 ### Default constructor for `Ride` class
 
-> 20:20/21:02 (6.5) Default constructor for `Ride` class
-
-After encountering several exceptions (from 14:00 to 20:00), the instructor adds a default constructor to the `Ride`
-class.
+After encountering several exceptions (from 14:00 to 20:00), the instructor adds a default constructor to the `Ride` class.
 
 **File `Ride.java`**
 
@@ -381,15 +350,10 @@ public Ride() {}
 
 ### Run `JsonConsumer`
 
-> 20:25/21:02 (6.5) Run JsonConsumer
-
 Now, let’s run `JsonConsumer`.
 
 If all goes well, you should see messages appear in the log of the Java IDE like this.
 
-![w6s19](dtc/w6s19.png)
-
-
-
+![w6s19](../images/w6s19.png)
 
 _[Back to the top](#kafka-producer-consumer)_

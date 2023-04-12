@@ -13,10 +13,6 @@
 - [Introduction to Stream Processing](#introduction-to-stream-processing)
 - [Introduction to Kafka](#introduction-to-kafka)
 - 
-- [Spark SQL and DataFrames](#spark-sql-and-dataframes)
-- [Spark Internals](#spark-internals)
-- [Resilient Distributed Datasets](#resilient-distributed-datasets)
-- [Running Spark in the Cloud](#running-spark-in-the-cloud)
 - [Homework](#homework)
 - [Community notes](#community-notes)
 
@@ -66,7 +62,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Kafka Configuration](#kafka_config.md)
+### [Kafka Configuration](kafka_config.md)
 - [Kafka Configuration Reference](https://docs.confluent.io/platform/current/installation/configuration/)
 
  :movie_camera: [Video](https://www.youtube.com/watch?v=SXQtWyRpMKs)

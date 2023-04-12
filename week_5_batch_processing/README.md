@@ -2,7 +2,7 @@
 >
 >Previous Week: [4: Analytics engineering](../week_4_analytics_engineering/README.md)
 >
->Next Week: [6: Streaming](week_6_stream_processing)
+>Next Week: [6: Streaming](../week_6_stream_processing/README.md)
 
 
 ## Week 5: Batch processing 

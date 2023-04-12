@@ -83,7 +83,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Week 6: Streaming](week_6_stream_processing)
+### [Week 6: Streaming](week_6_stream_processing/README.md)
 [Original](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_6_stream_processing)
 
 * Introduction to Kafka

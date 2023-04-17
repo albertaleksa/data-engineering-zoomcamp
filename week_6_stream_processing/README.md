@@ -75,11 +75,11 @@ _[Back to the top](#table-of-contents)_
 
 - [Streams Concepts](https://docs.confluent.io/platform/current/streams/concepts.html)
 
-- #### Kafka streams basics
+- #### [Kafka streams basics](kafka_streams_basics.md)
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=dUyA_63eRb0)
 
-- #### Kafka stream join
+- #### [Kafka stream join](kafka_stream_join.md)
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=NcpKlujh34Y)
 

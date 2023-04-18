@@ -83,11 +83,11 @@ _[Back to the top](#table-of-contents)_
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=NcpKlujh34Y)
 
-- #### Kafka stream testing
+- #### [Kafka stream testing](kafka_stream_testing.md)
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=TNx5rmLY8Pk)
 
-- #### Kafka stream windowing
+- #### [Kafka stream windowing](kafka_stream_windowing.md)
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=r1OuLdwxbRc)
 

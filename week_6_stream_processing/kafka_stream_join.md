@@ -2,7 +2,7 @@
 >
 >Previous Theme:  [Kafka Streams Basics](kafka_streams_basics.md)
 >
->Next Theme: 
+>Next Theme: [Kafka stream testing](kafka_stream_testing.md)
 
 # Kafka Streams
 

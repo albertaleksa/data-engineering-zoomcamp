@@ -91,7 +91,7 @@ _[Back to the top](#table-of-contents)_
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=r1OuLdwxbRc)
 
-- #### Kafka ksqldb & Connect
+- #### [Kafka ksqldb & Connect](kafka_ksqldb_connect.md)
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=DziQ4a4tn9Y)
 

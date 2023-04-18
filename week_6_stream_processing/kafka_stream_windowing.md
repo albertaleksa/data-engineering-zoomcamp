@@ -2,7 +2,7 @@
 >
 >Previous Theme:  [Kafka stream testing](kafka_stream_testing.md)
 >
->Next Theme: 
+>Next Theme: [Kafka ksqldb & Connect](kafka_ksqldb_connect.md)
 
 # Kafka Streams
 

@@ -2,7 +2,7 @@
 >
 >Previous Theme:   [Kafka stream windowing](kafka_stream_windowing.md)
 >
->Next Theme: 
+>Next Theme: [Kafka Schema registry](kafka_schema_registry.md)
 
 # Kafka Streams
 

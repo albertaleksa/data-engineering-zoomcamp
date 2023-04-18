@@ -95,7 +95,7 @@ _[Back to the top](#table-of-contents)_
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=DziQ4a4tn9Y)
 
-- #### Kafka Schema registry
+- #### [Kafka Schema registry](kafka_schema_registry.md)
 
   :movie_camera: [Video](https://www.youtube.com/watch?v=tBY_hBuyzwI)
 

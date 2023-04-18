@@ -1,31 +1,17 @@
 package org.example;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.common.serialization.Deserializer;
-import org.apache.kafka.common.serialization.Serde;
-import org.apache.kafka.common.serialization.Serializer;
-
-// import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
+import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.kstream.Consumed;
 import org.apache.kafka.streams.kstream.Produced;
-// import org.apache.kafka.streams.Topology;
-// import org.apache.kafka.streams.kstream.Consumed;
-// import org.apache.kafka.streams.kstream.Produced;
-// import org.example.customserdes.CustomSerdes;
+import org.example.customserdes.CustomSerdes;
 import org.example.data.Ride;
 
 import java.util.Properties;
-
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import io.confluent.kafka.serializers.KafkaJsonDeserializer;
-import io.confluent.kafka.serializers.KafkaJsonSerializer;
-
 
 public class JsonKStream {
     private Properties props = new Properties();
@@ -43,45 +29,24 @@ public class JsonKStream {
 
     }
 
-    // public Topology createTopology() {
-    //     StreamsBuilder streamsBuilder = new StreamsBuilder();
-    //     var ridesStream = streamsBuilder.stream("rides", Consumed.with(Serdes.String(), CustomSerdes.getSerde(Ride.class)));
-    //     var puLocationCount = ridesStream.groupByKey().count().toStream();
-    //     puLocationCount.to("rides-pulocation-count", Produced.with(Serdes.String(), Serdes.Long()));
-    //     return streamsBuilder.build();
-    // }
-
-    public void countPLocation() throws InterruptedException {
+    public Topology createTopology() {
         StreamsBuilder streamsBuilder = new StreamsBuilder();
-        var ridesStream = streamsBuilder.stream("rides", Consumed.with(Serdes.String(), getJsonSerde()));
+        var ridesStream = streamsBuilder.stream("rides", Consumed.with(Serdes.String(), CustomSerdes.getSerde(Ride.class)));
         var puLocationCount = ridesStream.groupByKey().count().toStream();
         puLocationCount.to("rides-pulocation-count", Produced.with(Serdes.String(), Serdes.Long()));
-
-        var kStreams = new KafkaStreams(streamsBuilder.build(), props);
-        kStreams.start();
-
-        Runtime.getRuntime().addShutdownHook(new Thread(kStreams::close));
-
-        // var topology = createTopology();
-        // var kStreams = new KafkaStreams(topology, props);
-        // kStreams.start();
-        // while (kStreams.state() != KafkaStreams.State.RUNNING) {
-        //     System.out.println(kStreams.state());
-        //     Thread.sleep(1000);
-        // }
-        // System.out.println(kStreams.state());
-        // Runtime.getRuntime().addShutdownHook(new Thread(kStreams::close));
+        return streamsBuilder.build();
     }
 
-    private Serde<Ride> getJsonSerde() {
-        Map<String, Object> serdeProps = new HashMap<>();
-        serdeProps.put("json.value.type", Ride.class);
-        final Serializer<Ride> mySerializer = new KafkaJsonSerializer<>();
-        mySerializer.configure(serdeProps, false);
-    
-        final Deserializer<Ride> myDeserializer = new KafkaJsonDeserializer<>();
-        myDeserializer.configure(serdeProps, false);
-        return Serdes.serdeFrom(mySerializer, myDeserializer);
+    public void countPLocation() throws InterruptedException {
+        var topology = createTopology();
+        var kStreams = new KafkaStreams(topology, props);
+        kStreams.start();
+        while (kStreams.state() != KafkaStreams.State.RUNNING) {
+            System.out.println(kStreams.state());
+            Thread.sleep(1000);
+        }
+        System.out.println(kStreams.state());
+        Runtime.getRuntime().addShutdownHook(new Thread(kStreams::close));
     }
 
     public static void main(String[] args) throws InterruptedException {

@@ -68,26 +68,21 @@ format](https://inakianduaga.github.io/kafka-image-processor/#/) for more.
 
 ### Schema evolution and compatibility
 
-> 10:10/31:19 (6.12) Avro schema evolution
-
-An important aspect of data management is schema evolution. After the initial schema is defined, applications may need
-to evolve it over time. When this happens, it’s critical for the downstream consumers to be able to handle data encoded
-with both the old and the new schema seamlessly.
+An important aspect of data management is schema evolution. After the initial schema is defined, applications may need to evolve it over time. When this happens, it’s critical for the downstream consumers to be able to handle data encoded with both the old and the new schema seamlessly.
 
 We can define 3 different kinds of evolutions for schemas:
 
-- **Forward compatibility** means that data produced with a new schema can be read by consumers using the last schema,
-  even though they may not be able to use the full capabilities of the new schema.
-- **Backward compatibility** means that consumers using the new schema can read data produced with the last schema.
+- **Forward compatibility** means that data produced with a new version of schema (v2) can be read by consumers using the old schema version (v1), even though they may not be able to use the full capabilities of the new schema. For example, a new optional field was added to schema and consumers can read data without this field. 
+- **Backward compatibility** means that consumers can read data, produced with old schema version (v1), using the new schema version (v2).
 - **Full** (or **mixed**) compatibility means schemas are both backward and forward compatible.
 
 <table>
 <tr><td>
-<img src="dtc/w6-forwardCompatibility.png">
+<img src="../images/w6-forwardCompatibility.png">
 </td><td>
-<img src="dtc/w6-backwardsCompatibility.png">
+<img src="../images/w6-backwardsCompatibility.png">
 </td><td>
-<img src="dtc/w6-mixedCompatibility.png">
+<img src="../images/w6-mixedCompatibility.png">
 </td></tr>
 </table>
 
@@ -95,11 +90,24 @@ See [Schema Evolution and Compatibility](https://docs.confluent.io/platform/curr
 
 
 ### Code example
-
-> 11:52/31:19 (6.12) Code example
-
-The instructor explained
-[AvroProducer.java](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_6_stream_processing/java/kafka_examples/src/main/java/org/example/AvroProducer.java).
+- Create `avro` file `rides.avsc`:
+```
+{
+       "type": "record",
+       "name":"RideRecord",
+       "namespace": "schemaregistry",
+       "fields":[
+         {"name":"vendor_id","type":"string"},
+         {"name":"passenger_count","type":"int"},
+         {"name":"trip_distance","type":"double"}
+       ]
+}
+```
+- In UI create topic `rides_avro` with 2 partitions and retention time = 1 day.
+- Then the instructor explained
+[AvroProducer.java](java/kafka_examples/src/main/java/org/example/AvroProducer.java).
+- Go to UI to Environment and create a Schema Registry key and secret and add it to `Secret.java`.
+- Copy endpoint for Schema Registry to prop `AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG` in `AvroProducer.java`.
 
 **File `AvroProducer.java`**
 
@@ -163,15 +171,12 @@ public class AvroProducer {
 }
 ```
 
-The central part of the Producer API is Producer class. Producer class provides an option to connect Kafka broker in its
-constructor by the following methods.
+The central part of the Producer API is Producer class. Producer class provides an option to connect Kafka broker in its constructor by the following methods.
 
 [KafkaProducer](https://javadoc.io/static/org.apache.kafka/kafka-clients/3.4.0/org/apache/kafka/clients/producer/KafkaProducer.html)
 is a Kafka client that publishes records to the Kafka cluster.
 
-The producer class provides `.send()` method to send messages to either single or multiple topics using the following
-signatures `public void send(KeyedMessaget<k,v> message)` sends the data to a single topic, partitioned by key using
-either sync or async producer.
+The producer class provides `.send()` method to send messages to either single or multiple topics using the following signatures `public void send(KeyedMessaget<k,v> message)` sends the data to a single topic, partitioned by key using either sync or async producer.
 
 [ProducerRecord](https://javadoc.io/static/org.apache.kafka/kafka-clients/3.4.0/org/apache/kafka/clients/producer/ProducerRecord.html)
 is a key/value pair to be sent to Kafka. This consists of a topic name to which the record is being sent, an optional
@@ -184,22 +189,24 @@ this class and Avro dependencies into our Gradle project (I think
 
 To write the consumer, you will need to configure it to use Schema Registry and to use the `KafkaAvroDeserializer`.
 
-The `rides.csv` filke is
-[here](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_6_stream_processing/java/kafka_examples/src/main/resources/rides.csv).
+The `rides.csv` file is
+[here](java/kafka_examples/src/main/resources/rides.csv).
 
 ### Run this
-
-> 19:35/31:19 (6.12) Run this
 
 The instructor runs AvroProducer and sees that messages are being created in Confluent Cloud.
 
 ### Example with modified schema
 
-> 21:27/31:19 (6.12) Example with modified schema
+After modifying Schema by changing field `vendor_id` type from `string` to `int` in `rides.avsc`, it failed because registered schema is incompatible. 
+
+Do smt with gradle (`./gradlew clean build`).
+
+If add new field and run AvroProducer, then in UI in Topic we'll see new messages with new schema. Also, in Schema Registry we can see and compare our schemas.
 
 ## Conclusion
 
-> 28:58/31:19 (6.12) Conclusion
+
 
 ## Selected links
 
@@ -227,6 +234,5 @@ The instructor runs AvroProducer and sees that messages are being created in Con
 - Others
   - [awesome-kafka](https://github.com/infoslack/awesome-kafka/blob/master/README.md)
 
-Last updated: March 7, 2023
 
 _[Back to the top](#kafka-schema-registry)_

@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class RideRecord extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6805437803204402942L;
+  private static final long serialVersionUID = 8179643769614648404L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RideRecord\",\"namespace\":\"schemaregistry\",\"fields\":[{\"name\":\"vendor_id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"passenger_count\",\"type\":\"int\"},{\"name\":\"trip_distance\",\"type\":\"double\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RideRecord\",\"namespace\":\"schemaregistry\",\"fields\":[{\"name\":\"vendor_id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"passenger_count\",\"type\":\"int\"},{\"name\":\"trip_distance\",\"type\":\"double\"},{\"name\":\"pu_location_id\",\"type\":[\"null\",\"long\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -76,6 +76,7 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
   private java.lang.String vendor_id;
   private int passenger_count;
   private double trip_distance;
+  private java.lang.Long pu_location_id;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -89,11 +90,13 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
    * @param vendor_id The new value for vendor_id
    * @param passenger_count The new value for passenger_count
    * @param trip_distance The new value for trip_distance
+   * @param pu_location_id The new value for pu_location_id
    */
-  public RideRecord(java.lang.String vendor_id, java.lang.Integer passenger_count, java.lang.Double trip_distance) {
+  public RideRecord(java.lang.String vendor_id, java.lang.Integer passenger_count, java.lang.Double trip_distance, java.lang.Long pu_location_id) {
     this.vendor_id = vendor_id;
     this.passenger_count = passenger_count;
     this.trip_distance = trip_distance;
+    this.pu_location_id = pu_location_id;
   }
 
   @Override
@@ -109,6 +112,7 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
     case 0: return vendor_id;
     case 1: return passenger_count;
     case 2: return trip_distance;
+    case 3: return pu_location_id;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -121,6 +125,7 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
     case 0: vendor_id = value$ != null ? value$.toString() : null; break;
     case 1: passenger_count = (java.lang.Integer)value$; break;
     case 2: trip_distance = (java.lang.Double)value$; break;
+    case 3: pu_location_id = (java.lang.Long)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -177,6 +182,23 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   /**
+   * Gets the value of the 'pu_location_id' field.
+   * @return The value of the 'pu_location_id' field.
+   */
+  public java.lang.Long getPuLocationId() {
+    return pu_location_id;
+  }
+
+
+  /**
+   * Sets the value of the 'pu_location_id' field.
+   * @param value the value to set.
+   */
+  public void setPuLocationId(java.lang.Long value) {
+    this.pu_location_id = value;
+  }
+
+  /**
    * Creates a new RideRecord RecordBuilder.
    * @return A new RideRecord RecordBuilder
    */
@@ -220,6 +242,7 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
     private java.lang.String vendor_id;
     private int passenger_count;
     private double trip_distance;
+    private java.lang.Long pu_location_id;
 
     /** Creates a new Builder */
     private Builder() {
@@ -244,6 +267,10 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
         this.trip_distance = data().deepCopy(fields()[2].schema(), other.trip_distance);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
+      if (isValidValue(fields()[3], other.pu_location_id)) {
+        this.pu_location_id = data().deepCopy(fields()[3].schema(), other.pu_location_id);
+        fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
     }
 
     /**
@@ -263,6 +290,10 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
       if (isValidValue(fields()[2], other.trip_distance)) {
         this.trip_distance = data().deepCopy(fields()[2].schema(), other.trip_distance);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.pu_location_id)) {
+        this.pu_location_id = data().deepCopy(fields()[3].schema(), other.pu_location_id);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -384,6 +415,46 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
       return this;
     }
 
+    /**
+      * Gets the value of the 'pu_location_id' field.
+      * @return The value.
+      */
+    public java.lang.Long getPuLocationId() {
+      return pu_location_id;
+    }
+
+
+    /**
+      * Sets the value of the 'pu_location_id' field.
+      * @param value The value of 'pu_location_id'.
+      * @return This builder.
+      */
+    public schemaregistry.RideRecord.Builder setPuLocationId(java.lang.Long value) {
+      validate(fields()[3], value);
+      this.pu_location_id = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'pu_location_id' field has been set.
+      * @return True if the 'pu_location_id' field has been set, false otherwise.
+      */
+    public boolean hasPuLocationId() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'pu_location_id' field.
+      * @return This builder.
+      */
+    public schemaregistry.RideRecord.Builder clearPuLocationId() {
+      pu_location_id = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public RideRecord build() {
@@ -392,6 +463,7 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
         record.vendor_id = fieldSetFlags()[0] ? this.vendor_id : (java.lang.String) defaultValue(fields()[0]);
         record.passenger_count = fieldSetFlags()[1] ? this.passenger_count : (java.lang.Integer) defaultValue(fields()[1]);
         record.trip_distance = fieldSetFlags()[2] ? this.trip_distance : (java.lang.Double) defaultValue(fields()[2]);
+        record.pu_location_id = fieldSetFlags()[3] ? this.pu_location_id : (java.lang.Long) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -430,6 +502,14 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
 
     out.writeDouble(this.trip_distance);
 
+    if (this.pu_location_id == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeLong(this.pu_location_id);
+    }
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -443,8 +523,15 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
 
       this.trip_distance = in.readDouble();
 
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.pu_location_id = null;
+      } else {
+        this.pu_location_id = in.readLong();
+      }
+
     } else {
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < 4; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.vendor_id = in.readString();
@@ -456,6 +543,15 @@ public class RideRecord extends org.apache.avro.specific.SpecificRecordBase impl
 
         case 2:
           this.trip_distance = in.readDouble();
+          break;
+
+        case 3:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.pu_location_id = null;
+          } else {
+            this.pu_location_id = in.readLong();
+          }
           break;
 
         default:

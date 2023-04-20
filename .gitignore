@@ -24,3 +24,4 @@
 /etl_parent_flow-deployment.yaml
 
 /week_2_workflow_orchestration/flows/01_start/yellow_tripdata_2021-01.csv.gz
+/week_6_stream_processing/java/kafka_examples/src/main/java/org/example/Secrets.java

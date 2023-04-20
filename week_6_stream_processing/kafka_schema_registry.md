@@ -2,7 +2,7 @@
 >
 >Previous Theme:   [Kafka ksqldb & Connect](kafka_ksqldb_connect.md)
 >
->Next Theme: 
+>Next Theme: [Pyspark - Structured Streaming](kafka_python.md)
 
 # Kafka Streams
 

@@ -116,7 +116,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### Pyspark - Structured Streaming
+### [Pyspark - Structured Streaming](kafka_python.md)
 Please follow the steps described under [pyspark-streaming](python/streams-example/pyspark/README.md)
 
 - #### Kafka Streaming with Python
@@ -163,6 +163,11 @@ _[Back to the top](#table-of-contents)_
 
 ### Homework
 
+Homework can be found [here](../cohorts/2023/week_6_stream_processing/homework.md).
+
+Solution for homework [here](../cohorts/2023/week_6_stream_processing/homework_my_solutions.md).
+
+
 [Form](https://forms.gle/rK7268U92mHJBpmW7)
 
 The homework is mostly theoretical. In the last question you have to provide working code link, please keep in mind that this
@@ -178,32 +183,6 @@ Did you take notes? You can share them here.
 
 * [Notes by Alvaro Navas](https://github.com/ziritrion/dataeng-zoomcamp/blob/main/notes/6_streaming.md )
 * [Marcos Torregrosa's blog (spanish)](https://www.n4gash.com/2023/data-engineering-zoomcamp-semana-6-stream-processing/)
-* Add your notes here (above this line)
-
-_[Back to the top](#table-of-contents)_
-
----
-
-
-
-
-### Homework 
-Homework can be found [here](../cohorts/2023/week_5_batch_processing/homework.md).
-
-Solution for homework [here](../cohorts/2023/week_5_batch_processing/homework_my_solutions.md).
-
-_[Back to the top](#table-of-contents)_
-
-## Community notes
-
-Did you take notes? You can share them here.
-
-* [Notes by Alvaro Navas](https://github.com/ziritrion/dataeng-zoomcamp/blob/main/notes/5_batch_processing.md)
-* [Sandy's DE Learning Blog](https://learningdataengineering540969211.wordpress.com/2022/02/24/week-5-de-zoomcamp-5-2-1-installing-spark-on-linux/)
-* [Notes by Alain Boisvert](https://github.com/boisalai/de-zoomcamp-2023/blob/main/week5.md)
-* [Alternative : Using docker-compose to launch spark by rafik](https://gist.github.com/rafik-rahoui/f98df941c4ccced9c46e9ccbdef63a03) 
-* [Marcos Torregrosa's blog (spanish)](https://www.n4gash.com/2023/data-engineering-zoomcamp-semana-5-batch-spark)
-* [Notes by Victor Padilha](https://github.com/padilha/de-zoomcamp/tree/master/week5)
 * Add your notes here (above this line)
 
 _[Back to the top](#table-of-contents)_

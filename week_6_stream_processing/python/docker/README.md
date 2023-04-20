@@ -24,7 +24,7 @@ docker volume create --name=hadoop-distributed-file-system
 ### 3. Run Services on Docker
 ```bash
 # Start Docker-Compose (within for kafka and spark folders)
-docker compose up -d
+docker-compose up -d
 ```
 In depth explanation of [Kafka Listeners](https://www.confluent.io/blog/kafka-listeners-explained/)
 
@@ -33,7 +33,7 @@ Explanation of [Kafka Listeners](https://www.confluent.io/blog/kafka-listeners-e
 ### 4. Stop Services on Docker
 ```bash
 # Stop Docker-Compose (within for kafka and spark folders)
-docker compose down
+docker-compose down
 ```
 
 ### 5. Helpful Comands

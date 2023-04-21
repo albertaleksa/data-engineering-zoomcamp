@@ -1,10 +1,10 @@
 >[Back to Week Menu](README.md)
 >
->Previous Theme:   [Kafka ksqldb & Connect](kafka_ksqldb_connect.md)
+>Previous Theme:  [Kafka Schema registry](kafka_schema_registry.md)
 >
->Next Theme: [Pyspark - Structured Streaming](#kafka_python.md)
+> [Homework](../cohorts/2023/week_6_stream_processing/homework.md)
 
-# Pyspark - Structured Streaming
+# Streaming with Python
 
 Please follow the steps described under [pyspark-streaming](python/streams-example/pyspark/README.md)
 
@@ -84,7 +84,7 @@ I will use VM in GCP that was created in week_1.
 ### Difference between JSON and AVRO Examples
 How we define Serialization/Deserialization and which level of Serialization/Deserialization we needed to own in our codebase. Our Serialization ensures Contract between services.
 
-_[Back to the top](#pyspark---structured-streaming)_
+_[Back to the top](#streaming-with-python)_
 
 
 ## Pyspark Structured Streaming
@@ -149,4 +149,4 @@ the blog post written by André Perez on [Medium blog -Towards Data Science](htt
 
 Failed to find data source: kafka. Please deploy the application as per the deployment section of "Structured Streaming + Kafka Integration Guide".
 
-_[Back to the top](#pyspark---structured-streaming)_
+_[Back to the top](#streaming-with-python)_

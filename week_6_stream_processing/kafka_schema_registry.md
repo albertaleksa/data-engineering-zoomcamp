@@ -1,8 +1,8 @@
 >[Back to Week Menu](README.md)
 >
->Previous Theme:   [Kafka ksqldb & Connect](kafka_ksqldb_connect.md)
+>Previous Theme:  [Kafka ksqldb & Connect](kafka_ksqldb_connect.md)
 >
->Next Theme: [Pyspark - Structured Streaming](kafka_python.md)
+>Next Theme: [Streaming with Python](kafka_python.md)
 
 # Kafka Streams
 

@@ -1,3 +1,8 @@
+>[Back to Main course page](../README.md)
+>
+>Previous Week: [6: Streaming](../week_6_stream_processing/README.md)
+
+
 ## Course Project
 
 The goal of this project is to apply everything we learned

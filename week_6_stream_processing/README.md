@@ -2,7 +2,7 @@
 >
 >Previous Week: [5: Batch processing](../week_5_batch_processing/README.md)
 >
->Next Week: 
+>Next Week: [Week 7, 8 & 9: Project](../week_7_project/README.md)
 
 
 ## Week 6: Streaming 
@@ -15,7 +15,7 @@
 - [Kafka Configuration](#kafka-configuration)
 - [Kafka Streams](#kafka-streams)
 - [Faust - Python Stream Processing](#faust---python-stream-processing)
-- [Pyspark - Structured Streaming](#pyspark---structured-streaming)
+- [Streaming with Python](#streaming-with-python)
 - [Kafka Streams with JVM library](#kafka-streams-with-jvm-library)
 - [KSQL and ksqlDB](#ksql-and-ksqldb)
 - [Kafka Connect](#kafka-connect)
@@ -116,7 +116,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Pyspark - Structured Streaming](kafka_python.md)
+### [Streaming with Python](kafka_python.md)
 Please follow the steps described under [pyspark-streaming](python/streams-example/pyspark/README.md)
 
 - #### Kafka Streaming with Python

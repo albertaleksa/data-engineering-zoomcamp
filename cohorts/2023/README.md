@@ -33,8 +33,14 @@
 
 [**Week 5: Batch processing**](week_5_batch_processing/)
 
-* [Homework](week_5_batch_processing/homework.md)
+* [Homework](week_5_batch_processing/homework.md) and [My Solution](week_5_batch_processing/homework_my_solutions.md)
+* [Office hours](https://www.youtube.com/watch?v=5_69yL2PPYI&list=PL3MmuxUbc_hJjEePXIdE-LVUx_1ZZjYGW)
 
-Week 6: Streaming
+[**Week 6: Stream Processing**](week_6_stream_processing)
 
-Week 7, 8 & 9: Project
+* [Homework](week_6_stream_processing/homework.md)
+
+
+[**Week 7, 8 & 9: Project**](project.md)
+
+More information [here](project.md)

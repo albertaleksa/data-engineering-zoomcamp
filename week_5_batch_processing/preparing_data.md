@@ -264,4 +264,4 @@ for month in range(1, 13):
 
 You may download a finished Jupyter Notebook script [from this file](code/05_taxi_schema.ipynb).
 
-_[Back to the top](#-optional--preparing-yellow-and-green-taxi-data)_
+_[Back to the top](#optional-preparing-yellow-and-green-taxi-data)_

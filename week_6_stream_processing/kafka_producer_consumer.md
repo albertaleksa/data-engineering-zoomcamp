@@ -2,7 +2,7 @@
 >
 >Previous Theme:  [Confluent cloud](confluent_cloud.md)
 >
->Next Theme: 
+>Next Theme: [Kafka Configuration](kafka_config.md)
 
 # Introduction to Kafka
 

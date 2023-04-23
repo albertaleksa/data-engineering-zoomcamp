@@ -93,7 +93,7 @@ _[Back to the top](#table-of-contents)_
 
 _[Back to the top](#table-of-contents)_
 
-### [Week 7, 8 & 9: Project](week_7_project)
+### [Week 7, 8 & 9: Project](week_7_project/README.md)
 
 Putting everything we learned to practice
 

@@ -1,6 +1,6 @@
 >[Back to Week Menu](README.md)
 >
->Previous Theme:   [Kafka stream windowing](kafka_stream_windowing.md)
+>Previous Theme:  [Kafka stream windowing](kafka_stream_windowing.md)
 >
 >Next Theme: [Kafka Schema registry](kafka_schema_registry.md)
 

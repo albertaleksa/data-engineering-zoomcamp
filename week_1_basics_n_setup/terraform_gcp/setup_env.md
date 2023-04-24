@@ -1,13 +1,14 @@
 ## Setting up the Environment on Google Cloud
 ### 1. Generate SSH keys to login to VM instances
-    (https://cloud.google.com/compute/docs/connect/create-ssh-keys)
-\
-    ```
-    $ cd ~/.ssh
-    $ ssh-keygen -t rsa -f ~/.ssh/gcp -C albert_tests -b 2048
-    ```
+    
+(https://cloud.google.com/compute/docs/connect/create-ssh-keys)
 
-    > pass: empty
+  ```
+  $ cd ~/.ssh
+  $ ssh-keygen -t rsa -f ~/.ssh/gcp -C albert_tests -b 2048
+  ```
+
+  > pass: empty
 
 ### 2. Put generated public key to google cloud:
     (Metadata -> SSH Keys -> Add ssh key) and copy all from file `gcp.pub`

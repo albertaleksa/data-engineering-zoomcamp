@@ -9,7 +9,7 @@
 ### Prefect Flows: Parameterized Flow
 
 Will get file `etl_web_to_gcs.py` and parametrize flow:
-- Create file `parameterized_flow.py` and to it all from `etl_web_to_gcs.py`
+- Create file `parameterized_flow.py` and copy to it all from `etl_web_to_gcs.py`
 - Add params into the flow `etl_web_to_gcs`:
     ```
     @flow()

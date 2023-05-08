@@ -68,7 +68,13 @@ $ python ingest_data.py
   ```
 
 - Convert function `ingest_data` into a **task** by adding *decorator* **@task()**
-- Run script `python ingest_data.py`. Created flow and task. 
+- Run script `python ingest_data.py`. Created flow and task.
+- P.S. Once have this error:
+  ```
+  RuntimeError: Cannot create flow run. Failed to reach API at http://127.0.0.1:4200/api/.
+  ```
+  - `prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api` didn't help
+  - `prefect config unset PREFECT_API_URL` helped
 
 ### Prefect Task: Extract Data
 - Add task(function) for extraction data and move from function `ingest_data`
